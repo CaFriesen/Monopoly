@@ -77,9 +77,12 @@ GetSquare(int): int</panel_attributes>
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>RealEstate
+    <panel_attributes>RealEstate {Abstract}
 --
-
+Name: string
+Price: int
+Available: bool 
+OnMortage: bool
 --</panel_attributes>
     <additional_attributes/>
   </element>
@@ -149,7 +152,7 @@ GetSquare(int): int</panel_attributes>
     </coordinates>
     <panel_attributes>Railroads
 --
-
+BaseRent: int
 --</panel_attributes>
     <additional_attributes/>
   </element>
@@ -163,8 +166,10 @@ GetSquare(int): int</panel_attributes>
     </coordinates>
     <panel_attributes>Streets
 --
-
---</panel_attributes>
+Level: int
+Rent: int
+--
+AddHouse(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -282,6 +287,8 @@ RealEstates: list&lt;RealEstate&gt;
 --
 Buy(RealEstate): void of int
 BuyHouse(RealEstate): void of int
+RentRailRoad(): int
+RentUtilitys(int DiceRoll): int
 
 </panel_attributes>
     <additional_attributes/>
