@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class GameBoard
+    public class GameBoard
     {
+        private List<GameSquare> squares;
+
+        public IReadOnlyList<GameSquare> Squares
+        {
+            get => squares;
+        }
+
+        public GameBoard()
+        {
+            squares = new List<GameSquare>();
+        }
+
+        public void AddSquare(GameSquare square)
+        {
+            squares.Add(square);
+        }
     }
 }

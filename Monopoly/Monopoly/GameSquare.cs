@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class GameSquare
+    public class GameSquare
     {
+        public int ID { get; set; }
+
+        public GameSquare()
+        {
+
+        }
     }
 }
