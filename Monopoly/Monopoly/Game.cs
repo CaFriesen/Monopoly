@@ -9,10 +9,17 @@ namespace Monopoly
     public class Game
     {
         GameBoard Gameboard;
+        private List<GameSquare> squares;
+
+        public IReadOnlyList<GameSquare> Squares
+        {
+            get => squares;
+        }
 
         public Game()
         {
             Gameboard = new GameBoard();
+
         }
 
         public GameSquare GetGameSquare(int squareID)
