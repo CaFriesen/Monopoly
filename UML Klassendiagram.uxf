@@ -40,7 +40,7 @@ AddSquare(): GameSquare</panel_attributes>
       <h>405</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;430.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -54,8 +54,10 @@ AddSquare(): GameSquare</panel_attributes>
 --
 Color: Color
 Name: string
+SquareID: int
 --
-Action(Player): void (virtual)</panel_attributes>
+GameSquare(squareID: int)
+Action(Player): void {abstract}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -66,7 +68,7 @@ Action(Player): void (virtual)</panel_attributes>
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>nothing
+    <panel_attributes>GoToJail
 --
 
 --</panel_attributes>
@@ -141,10 +143,11 @@ Bonus(int BonusAmount)</panel_attributes>
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>Utility's
+    <panel_attributes>Utility
 --
-
---</panel_attributes>
+Multiplier: int
+--
+GetRent(diceRoll: int): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -155,7 +158,7 @@ Bonus(int BonusAmount)</panel_attributes>
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>Railroads
+    <panel_attributes>Railroad
 --
 BaseRent: int
 --</panel_attributes>
@@ -169,12 +172,13 @@ BaseRent: int
       <w>189</w>
       <h>171</h>
     </coordinates>
-    <panel_attributes>Streets
+    <panel_attributes>Street
 --
 Level: int
 Rent: int
 --
-AddHouse(): void</panel_attributes>
+AddHouse(): void
+AddHotel(): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -186,7 +190,7 @@ AddHouse(): void</panel_attributes>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0;300.0;60.0;300.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;270.0;50.0;270.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -197,7 +201,7 @@ AddHouse(): void</panel_attributes>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -208,7 +212,7 @@ AddHouse(): void</panel_attributes>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>300.0;10.0;300.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+    <additional_attributes>240.0;10.0;240.0;50.0;10.0;50.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -219,7 +223,7 @@ AddHouse(): void</panel_attributes>
       <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -230,7 +234,7 @@ AddHouse(): void</panel_attributes>
       <h>90</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>250.0;20.0;10.0;20.0;10.0;80.0</additional_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -241,7 +245,7 @@ AddHouse(): void</panel_attributes>
       <h>90</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;20.0;240.0;20.0;240.0;80.0</additional_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0;310.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -252,7 +256,7 @@ AddHouse(): void</panel_attributes>
       <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>500.0;10.0;500.0;120.0;10.0;120.0;10.0;200.0</additional_attributes>
+    <additional_attributes>420.0;10.0;420.0;120.0;10.0;120.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -263,7 +267,7 @@ AddHouse(): void</panel_attributes>
       <h>108</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;20.0;340.0;20.0;340.0;100.0</additional_attributes>
+    <additional_attributes>10.0;20.0;300.0;20.0;300.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -275,7 +279,7 @@ AddHouse(): void</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -363,7 +367,7 @@ Export(FileName): void</panel_attributes>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>360.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -388,7 +392,7 @@ SquareID: int
       <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -413,7 +417,7 @@ SquareID: int
 --
 
 --
-Action(Player): void (virtual)</panel_attributes>
+Action(Player): void {abstract}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -429,5 +433,148 @@ Action(Player): void (virtual)</panel_attributes>
 
 --</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>826</x>
+      <y>616</y>
+      <w>364</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;500.0;20.0;500.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1106</x>
+      <y>658</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>DrawCard
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1169</x>
+      <y>616</y>
+      <w>406</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;560.0;20.0;560.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1442</x>
+      <y>658</y>
+      <w>238</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Normal
+--
+Name: string
+Info: string
+--
+Action(player: Player): void {Abstract}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1442</x>
+      <y>819</y>
+      <w>238</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Start
+--
+Name: string
+Info: string
+--
+Action(player: Player): void {Abstract}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1554</x>
+      <y>784</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1687</x>
+      <y>819</y>
+      <w>238</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Jail
+--
+Name: string
+Info: string
+--
+Action(player: Player): void {Abstract}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1939</x>
+      <y>819</y>
+      <w>238</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Parking
+--
+Name: string
+Info: string
+--
+Action(player: Player): void {Abstract}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1554</x>
+      <y>791</y>
+      <w>518</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;720.0;20.0;720.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1799</x>
+      <y>798</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1162</x>
+      <y>784</y>
+      <w>21</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
