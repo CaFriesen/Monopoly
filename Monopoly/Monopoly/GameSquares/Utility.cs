@@ -9,6 +9,7 @@ namespace Monopoly
     class Utility: RealEstate
     {
         private int baseRent;
+        private Player owner;
 
         public Utility(int squareId, string name, int price, int rent): base(squareId, name, rent)
         {
@@ -17,9 +18,17 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            //Attempt to sell if unsold
-            //Else
-            //Get rent from player based on owned utilitys and the dice player rolled
+            if (Available)
+            {
+                if (player.Buy(this))
+                {
+                    owner = player;
+                }
+            }
+            else
+            {
+                player.Cash -= baseRent * player.LastRoll;
+            }
         }
     }
 }
