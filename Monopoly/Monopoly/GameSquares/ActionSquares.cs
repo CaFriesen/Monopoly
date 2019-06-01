@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Utilitys
+    public abstract class ActionSquares: GameSquare
     {
+
+        public ActionSquares(int squareId): base(squareId)
+        {
+        }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly
+namespace Monopoly.GameSquares
 {
-    public class Player
+    public abstract class Normal: GameSquare
     {
-        public Player()
+        public Normal(int squareId): base(squareId)
         {
             
         }

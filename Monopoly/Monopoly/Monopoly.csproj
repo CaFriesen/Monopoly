@@ -50,10 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionSquares.cs" />
-    <Compile Include="Bonusses.cs" />
-    <Compile Include="Cards.cs" />
+    <Compile Include="GameSquares\ActionSquares.cs" />
+    <Compile Include="GameSquares\Bonusses.cs" />
     <Compile Include="FileHandeling.cs" />
+    <Compile Include="GameSquares\DrawCard.cs" />
+    <Compile Include="GameSquares\GoToJail.cs" />
+    <Compile Include="GameSquares\Jail.cs" />
+    <Compile Include="GameSquares\Normal.cs" />
+    <Compile Include="GameSquares\Parking.cs" />
+    <Compile Include="GameSquares\Start.cs" />
     <Compile Include="Monopoly.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,16 +67,16 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
-    <Compile Include="GameSquare.cs" />
-    <Compile Include="IID.cs" />
+    <Compile Include="GameSquares\GameSquare.cs" />
+    <Compile Include="GameSquares\ISquareId.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Railroads.cs" />
-    <Compile Include="RealEstate.cs" />
-    <Compile Include="Streets.cs" />
-    <Compile Include="Taxes.cs" />
-    <Compile Include="Utilitys.cs" />
+    <Compile Include="GameSquares\Railroad.cs" />
+    <Compile Include="GameSquares\RealEstate.cs" />
+    <Compile Include="GameSquares\Street.cs" />
+    <Compile Include="GameSquares\Taxes.cs" />
+    <Compile Include="GameSquares\Utility.cs" />
     <EmbeddedResource Include="Monopoly.resx">
       <DependentUpon>Monopoly.cs</DependentUpon>
     </EmbeddedResource>
