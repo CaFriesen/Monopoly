@@ -15,7 +15,6 @@ namespace Monopoly.GameSquares
 
         public override void Action(Player player)
         {
-            //Do nothing
         }
     }
 }

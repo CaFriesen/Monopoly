@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameSquares\ActionSquares.cs" />
+    <Compile Include="GameCards\GameCard.cs" />
+    <Compile Include="GameSquares\ActionSquare.cs" />
     <Compile Include="GameSquares\Bonusses.cs" />
     <Compile Include="FileHandeling.cs" />
     <Compile Include="GameSquares\DrawCard.cs" />

@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly
+namespace Monopoly.GameCards
 {
-    public abstract class ActionSquares: GameSquare
+    public abstract class GameCard
     {
-
-        public ActionSquares(int squareId): base(squareId)
+        public GameCard()
         {
+
         }
+
+        public abstract void CardAction(Player player);
     }
 }

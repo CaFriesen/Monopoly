@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace Monopoly.GameSquares
 {
-    class GoToJail: ActionSquares
+    class GoToJail: ActionSquare
     {
         public GoToJail(int squareId): base(squareId)
         {
-            
         }
 
         public override void Action(Player player)
         {
-            //Send player to jail
+            player.Jailed = true;
         }
     }
 }

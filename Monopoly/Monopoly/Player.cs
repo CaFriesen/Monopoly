@@ -10,6 +10,7 @@ namespace Monopoly
     public class Player
     {
         public int Cash { get; set; }
+        public bool Jailed { get; set; }
         public int LastRoll { get; set; }
         private List<RealEstate> realEstates;
 

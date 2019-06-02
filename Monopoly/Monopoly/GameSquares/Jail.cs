@@ -15,7 +15,7 @@ namespace Monopoly.GameSquares
 
         public override void Action(Player player)
         {
-            //Check if player should be in jail otherwise do nothing
+            
         }
     }
 }

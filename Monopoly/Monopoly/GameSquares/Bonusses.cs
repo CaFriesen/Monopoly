@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Bonusses: ActionSquares
+    class Bonusses: ActionSquare
     {
         private int bonusAmmount;
         public Bonusses(int squareId, int bonus): base(squareId)
@@ -16,7 +16,7 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            //Give player bonus based on bonusammount
+            player.Cash += bonusAmmount;
         }
     }
 }
