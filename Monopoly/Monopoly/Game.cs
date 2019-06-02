@@ -8,8 +8,12 @@ namespace Monopoly
 {
     public class Game
     {
-        GameBoard Gameboard;
+        private GameBoard Gameboard;
+        private Random random;
         private List<GameSquare> squares;
+        private Player[] players;
+        private Player player1;
+        private Player player2;
 
         public IReadOnlyList<GameSquare> Squares
         {
@@ -19,7 +23,15 @@ namespace Monopoly
         public Game()
         {
             Gameboard = new GameBoard();
+            players = { new Player(), new Player()}; //TODO make player array working
+            random = new Random();
+        }
 
+        public int Roll(int xPlayer)
+        {
+            Player player = players[xPlayer];
+            player.Position = random.Next(1, 7) + random.Next(1, 7);
+            return player.Position;
         }
 
         public GameSquare GetGameSquare(int squareID)

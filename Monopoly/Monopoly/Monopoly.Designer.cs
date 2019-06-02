@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbUtilitiesP1 = new System.Windows.Forms.GroupBox();
+            this.lblP1Rent = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNamePropertyP1 = new System.Windows.Forms.Label();
             this.btnP1profile = new System.Windows.Forms.Button();
             this.btnP1RealEstate = new System.Windows.Forms.Button();
             this.btnP1Upgrade = new System.Windows.Forms.Button();
@@ -36,21 +39,18 @@
             this.btnBuy = new System.Windows.Forms.Button();
             this.btnRoll = new System.Windows.Forms.Button();
             this.gbUtilitiesP2 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNamePropertyP2 = new System.Windows.Forms.Label();
             this.btnP2profile = new System.Windows.Forms.Button();
             this.btnP2RealEstate = new System.Windows.Forms.Button();
             this.btnP2Upgrade = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbP2Properties = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblP1Rent = new System.Windows.Forms.Label();
-            this.lblNamePropertyP1 = new System.Windows.Forms.Label();
-            this.lblNamePropertyP2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbUtilitiesP1.SuspendLayout();
-            this.gbUtilitiesP2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbUtilitiesP2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,33 @@
             this.gbUtilitiesP1.TabIndex = 0;
             this.gbUtilitiesP1.TabStop = false;
             this.gbUtilitiesP1.Text = "Utilities Player 1";
+            // 
+            // lblP1Rent
+            // 
+            this.lblP1Rent.AutoSize = true;
+            this.lblP1Rent.Location = new System.Drawing.Point(778, 167);
+            this.lblP1Rent.Name = "lblP1Rent";
+            this.lblP1Rent.Size = new System.Drawing.Size(34, 25);
+            this.lblP1Rent.TabIndex = 7;
+            this.lblP1Rent.Text = "$0";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.lblNamePropertyP1);
+            this.panel1.Location = new System.Drawing.Point(768, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(162, 77);
+            this.panel1.TabIndex = 2;
+            // 
+            // lblNamePropertyP1
+            // 
+            this.lblNamePropertyP1.AutoSize = true;
+            this.lblNamePropertyP1.Location = new System.Drawing.Point(11, 31);
+            this.lblNamePropertyP1.Name = "lblNamePropertyP1";
+            this.lblNamePropertyP1.Size = new System.Drawing.Size(34, 25);
+            this.lblNamePropertyP1.TabIndex = 8;
+            this.lblNamePropertyP1.Text = "$0";
             // 
             // btnP1profile
             // 
@@ -124,6 +151,7 @@
             this.btnRoll.TabIndex = 0;
             this.btnRoll.Text = "Roll";
             this.btnRoll.UseVisualStyleBackColor = true;
+            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
             // gbUtilitiesP2
             // 
@@ -141,6 +169,33 @@
             this.gbUtilitiesP2.TabIndex = 1;
             this.gbUtilitiesP2.TabStop = false;
             this.gbUtilitiesP2.Text = "Utilities Player 2";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(769, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(162, 77);
+            this.panel2.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "$0";
+            // 
+            // lblNamePropertyP2
+            // 
+            this.lblNamePropertyP2.AutoSize = true;
+            this.lblNamePropertyP2.Location = new System.Drawing.Point(784, 60);
+            this.lblNamePropertyP2.Name = "lblNamePropertyP2";
+            this.lblNamePropertyP2.Size = new System.Drawing.Size(34, 25);
+            this.lblNamePropertyP2.TabIndex = 9;
+            this.lblNamePropertyP2.Text = "$0";
             // 
             // btnP2profile
             // 
@@ -196,60 +251,6 @@
             this.button2.Text = "Roll";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel1.Controls.Add(this.lblNamePropertyP1);
-            this.panel1.Location = new System.Drawing.Point(768, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 77);
-            this.panel1.TabIndex = 2;
-            // 
-            // lblP1Rent
-            // 
-            this.lblP1Rent.AutoSize = true;
-            this.lblP1Rent.Location = new System.Drawing.Point(778, 167);
-            this.lblP1Rent.Name = "lblP1Rent";
-            this.lblP1Rent.Size = new System.Drawing.Size(34, 25);
-            this.lblP1Rent.TabIndex = 7;
-            this.lblP1Rent.Text = "$0";
-            // 
-            // lblNamePropertyP1
-            // 
-            this.lblNamePropertyP1.AutoSize = true;
-            this.lblNamePropertyP1.Location = new System.Drawing.Point(11, 31);
-            this.lblNamePropertyP1.Name = "lblNamePropertyP1";
-            this.lblNamePropertyP1.Size = new System.Drawing.Size(34, 25);
-            this.lblNamePropertyP1.TabIndex = 8;
-            this.lblNamePropertyP1.Text = "$0";
-            // 
-            // lblNamePropertyP2
-            // 
-            this.lblNamePropertyP2.AutoSize = true;
-            this.lblNamePropertyP2.Location = new System.Drawing.Point(784, 60);
-            this.lblNamePropertyP2.Name = "lblNamePropertyP2";
-            this.lblNamePropertyP2.Size = new System.Drawing.Size(34, 25);
-            this.lblNamePropertyP2.TabIndex = 9;
-            this.lblNamePropertyP2.Text = "$0";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(769, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 77);
-            this.panel2.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "$0";
-            // 
             // Monopoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -261,10 +262,10 @@
             this.Text = "Monopoly";
             this.gbUtilitiesP1.ResumeLayout(false);
             this.gbUtilitiesP1.PerformLayout();
-            this.gbUtilitiesP2.ResumeLayout(false);
-            this.gbUtilitiesP2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbUtilitiesP2.ResumeLayout(false);
+            this.gbUtilitiesP2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

@@ -12,6 +12,8 @@ namespace Monopoly
 {
     public partial class Monopoly : Form
     {
+        //TODO change Monopoly to UI 
+
         private Game game;
 
         public Monopoly()
@@ -25,7 +27,7 @@ namespace Monopoly
           foreach(GameSquare square in game.Squares)
             {
                 Button property = new Button();
-                property.Location = GetGameSquareLocation(square.ID, /*hoe kunnnen we een array uit gameboard hier het best halen?*/);
+                property.Location = GetBoardLocation(square.ID, 10); //GameBoard toevoegen aan UI?
                 property.ForeColor = square.Color;
                 if(square is RealEstate)
                 {
@@ -37,32 +39,43 @@ namespace Monopoly
                 }
             }  
         }
-
-        private Point GetGameSquareLocation(int orderNumber, int[] boardSize)
+        /// <summary>
+        /// 
+        /// contains a array of size 2 wich contains a board size and length
+        /// </summary>
+        /// <param name="orderNumber"></param>
+        /// <param name="boardSize"></param>
+        /// <returns></returns>
+        private Point GetBoardLocation(int orderNumber, int boardSideLength)
         {
             Point loc = new Point();
-            switch (orderNumber / (boardSize[1] / 4))
+            switch (orderNumber / boardSideLength)
             {
                 case (3):
-                   loc.X = orderNumber - (boardSize[0] * 3);
-                    loc.Y = 32;//TODO vind uit waard de locaties op een form liggen
+                   loc.X = 450;
+                    loc.Y = ((boardSideLength * 75) + 12) - (orderNumber - (boardSideLength * 3)) * 75;//TODO vind uit waard de locaties op een form liggen
                     break;
                 case (2):
-                    loc.X = 9 //Standaard waarden
-                    loc.Y = orderNumber - (boardSize[0] * 2);
+                    loc.X = ((boardSideLength * 75) + 450) - (orderNumber - (boardSideLength * 2)) * 75;
+                    loc.Y = ((boardSideLength * 75) + 12);
                     break;
                 case (1):
-                    loc.X = orderNumber - (boardSize[0]);
-                    loc.Y = 0;//standaard
+                    loc.X = 450 + 75 * boardSideLength;
+                    loc.Y = 12 + ((orderNumber - boardSideLength) * 75);
                     break;
                 case (0):
-                    loc.X = 0; //standaard waarden
-                    loc.Y = orderNumber;
+                    loc.X = (orderNumber * 75) + 12; //standaard waarden
+                    loc.Y = 450;
                     break;
-                case default: //uitzoeken waarom dit niet mag
+                default:
                     break;
             }
             return loc;
+        }
+
+        private void btnRoll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
