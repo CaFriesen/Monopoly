@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Utilitys
+    interface ISquareId
     {
-    }
+        int SquareId { get; }
+    } 
 }
