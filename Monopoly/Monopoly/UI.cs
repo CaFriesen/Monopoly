@@ -21,7 +21,14 @@ namespace Monopoly
             InitializeComponent();
             game = new Game();
             AddGameSquares();
+            AddPlayers();
             this.Size = new Size(1050, 750);
+
+        }
+
+        private void AddPlayers()
+        {
+
         }
 
         private void AddGameSquares()
@@ -40,7 +47,7 @@ namespace Monopoly
                 {
                     property.Text = square.Name;
                 }
-                property.Click += (o, d) => { MessageBox.Show(square.Info); };
+                //property.Click += (o, d) => { MessageBox.Show(square.Info); };
                 this.Controls.Add(property);
             }  
         }
@@ -78,8 +85,9 @@ namespace Monopoly
             return loc;
         }
 
-        private void btnRoll_Click(object sender, EventArgs e)
+        private void btnRollP1_Click(object sender, EventArgs e)
         {
+            game.Roll(0);
 
         }
     }

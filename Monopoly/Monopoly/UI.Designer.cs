@@ -37,8 +37,9 @@
             this.btnP1Upgrade = new System.Windows.Forms.Button();
             this.lbP1Properties = new System.Windows.Forms.ListBox();
             this.btnBuy = new System.Windows.Forms.Button();
-            this.btnRoll = new System.Windows.Forms.Button();
+            this.btnRollP1 = new System.Windows.Forms.Button();
             this.gbUtilitiesP2 = new System.Windows.Forms.GroupBox();
+            this.lblRentP2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNamePropertyP2 = new System.Windows.Forms.Label();
@@ -47,8 +48,7 @@
             this.btnP2Upgrade = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbP2Properties = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.lblRentP2 = new System.Windows.Forms.Label();
+            this.btnRollP2 = new System.Windows.Forms.Button();
             this.gbUtilitiesP1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbUtilitiesP2.SuspendLayout();
@@ -64,7 +64,7 @@
             this.gbUtilitiesP1.Controls.Add(this.btnP1Upgrade);
             this.gbUtilitiesP1.Controls.Add(this.lbP1Properties);
             this.gbUtilitiesP1.Controls.Add(this.btnBuy);
-            this.gbUtilitiesP1.Controls.Add(this.btnRoll);
+            this.gbUtilitiesP1.Controls.Add(this.btnRollP1);
             this.gbUtilitiesP1.Location = new System.Drawing.Point(11, 1045);
             this.gbUtilitiesP1.Name = "gbUtilitiesP1";
             this.gbUtilitiesP1.Size = new System.Drawing.Size(936, 229);
@@ -145,15 +145,15 @@
             this.btnBuy.Text = "Buy";
             this.btnBuy.UseVisualStyleBackColor = true;
             // 
-            // btnRoll
+            // btnRollP1
             // 
-            this.btnRoll.Location = new System.Drawing.Point(6, 28);
-            this.btnRoll.Name = "btnRoll";
-            this.btnRoll.Size = new System.Drawing.Size(224, 94);
-            this.btnRoll.TabIndex = 0;
-            this.btnRoll.Text = "Roll";
-            this.btnRoll.UseVisualStyleBackColor = true;
-            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
+            this.btnRollP1.Location = new System.Drawing.Point(6, 28);
+            this.btnRollP1.Name = "btnRollP1";
+            this.btnRollP1.Size = new System.Drawing.Size(224, 94);
+            this.btnRollP1.TabIndex = 0;
+            this.btnRollP1.Text = "Roll";
+            this.btnRollP1.UseVisualStyleBackColor = true;
+            this.btnRollP1.Click += new System.EventHandler(this.btnRollP1_Click);
             // 
             // gbUtilitiesP2
             // 
@@ -165,13 +165,23 @@
             this.gbUtilitiesP2.Controls.Add(this.btnP2Upgrade);
             this.gbUtilitiesP2.Controls.Add(this.button1);
             this.gbUtilitiesP2.Controls.Add(this.lbP2Properties);
-            this.gbUtilitiesP2.Controls.Add(this.button2);
+            this.gbUtilitiesP2.Controls.Add(this.btnRollP2);
             this.gbUtilitiesP2.Location = new System.Drawing.Point(953, 1045);
             this.gbUtilitiesP2.Name = "gbUtilitiesP2";
             this.gbUtilitiesP2.Size = new System.Drawing.Size(931, 229);
             this.gbUtilitiesP2.TabIndex = 1;
             this.gbUtilitiesP2.TabStop = false;
             this.gbUtilitiesP2.Text = "Utilities Player 2";
+            // 
+            // lblRentP2
+            // 
+            this.lblRentP2.AutoSize = true;
+            this.lblRentP2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblRentP2.Location = new System.Drawing.Point(810, 177);
+            this.lblRentP2.Name = "lblRentP2";
+            this.lblRentP2.Size = new System.Drawing.Size(34, 25);
+            this.lblRentP2.TabIndex = 8;
+            this.lblRentP2.Text = "$0";
             // 
             // panel2
             // 
@@ -246,24 +256,14 @@
             this.lbP2Properties.Size = new System.Drawing.Size(389, 196);
             this.lbP2Properties.TabIndex = 4;
             // 
-            // button2
+            // btnRollP2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(224, 94);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Roll";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // lblRentP2
-            // 
-            this.lblRentP2.AutoSize = true;
-            this.lblRentP2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblRentP2.Location = new System.Drawing.Point(810, 177);
-            this.lblRentP2.Name = "lblRentP2";
-            this.lblRentP2.Size = new System.Drawing.Size(34, 25);
-            this.lblRentP2.TabIndex = 8;
-            this.lblRentP2.Text = "$0";
+            this.btnRollP2.Location = new System.Drawing.Point(6, 28);
+            this.btnRollP2.Name = "btnRollP2";
+            this.btnRollP2.Size = new System.Drawing.Size(224, 94);
+            this.btnRollP2.TabIndex = 2;
+            this.btnRollP2.Text = "Roll";
+            this.btnRollP2.UseVisualStyleBackColor = true;
             // 
             // UI
             // 
@@ -293,13 +293,13 @@
         private System.Windows.Forms.Button btnP1Upgrade;
         private System.Windows.Forms.ListBox lbP1Properties;
         private System.Windows.Forms.Button btnBuy;
-        private System.Windows.Forms.Button btnRoll;
+        private System.Windows.Forms.Button btnRollP1;
         private System.Windows.Forms.GroupBox gbUtilitiesP2;
         private System.Windows.Forms.Button btnP2RealEstate;
         private System.Windows.Forms.Button btnP2Upgrade;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lbP2Properties;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRollP2;
         private System.Windows.Forms.Button btnP1profile;
         private System.Windows.Forms.Button btnP2profile;
         private System.Windows.Forms.Label lblRentP1;

@@ -11,6 +11,11 @@ namespace Monopoly
         public GameBoard Gameboard;
         private Random random;
         private List<Player> players;
+
+        public IReadOnlyList<Player> Players
+        {
+            get => players;
+        }
   
 
         public Game()
