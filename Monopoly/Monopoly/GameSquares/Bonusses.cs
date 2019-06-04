@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Bonusses: ActionSquare
+    public class Bonusses: ActionSquare
     {
         private int bonusAmmount;
         public Bonusses(int squareId, int bonus, string name, int r, int g, int b) : base(squareId, name, r, g, b)

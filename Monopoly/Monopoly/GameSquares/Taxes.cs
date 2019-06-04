@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Taxes: ActionSquare
+    public class Taxes: ActionSquare
     {
         public Taxes(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
@@ -21,12 +21,18 @@ namespace Monopoly
                 totalWorth += estate.Price;
                 if (estate is Street)
                 {
-                    totalWorth+= (estate as Street).Level * 50;
+                    totalWorth += (estate as Street).Level * (estate as Street).HousePrice;
                 }
             }
 
-            player.Cash -= totalWorth;
-            //Get tax from player either 10% of all assets or 200$
+            if ((totalWorth / 100) * 10 > 200)
+            {
+                player.Cash -= (totalWorth / 100) * 10;
+            }
+            else
+            {
+                player.Cash -= 200;
+            }
         }
     }
 }

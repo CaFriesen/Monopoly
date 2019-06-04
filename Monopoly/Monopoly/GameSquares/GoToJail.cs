@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.GameSquares
+namespace Monopoly
 {
-    class GoToJail: ActionSquare
+    public class GoToJail: ActionSquare
     {
         public GoToJail(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {

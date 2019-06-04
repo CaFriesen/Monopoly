@@ -10,7 +10,7 @@ namespace Monopoly
     public class Street: RealEstate
     {
         private int baseRent;
-        private int housePrice;
+        public int HousePrice { get; private set; }
 
         public int Rent
         {
@@ -31,7 +31,7 @@ namespace Monopoly
         public Street(int squareId, int price, int rent, int housePrice, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
             baseRent = rent;
-            this.housePrice = housePrice;
+            HousePrice = housePrice;
             Level = 0;
         }
 
@@ -48,7 +48,7 @@ namespace Monopoly
         {
             if (Level < 4 && Owner != null)
             {
-                Owner.Cash -= housePrice;
+                Owner.Cash -= HousePrice;
                 Level++;
             }
         }
@@ -57,7 +57,7 @@ namespace Monopoly
         {
             if (Level == 4 && Owner != null)
             {
-                Owner.Cash -= housePrice;
+                Owner.Cash -= HousePrice;
                 Level++;
             }
         }
