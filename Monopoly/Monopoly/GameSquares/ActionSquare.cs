@@ -8,7 +8,7 @@ namespace Monopoly
 {
     public abstract class ActionSquare: GameSquare
     {
-        public ActionSquare(int squareId): base(squareId)
+        public ActionSquare(int squareId, string name, int r, int g, int b): base(squareId, name, r, g, b)
         {
         }
 

@@ -8,23 +8,20 @@ namespace Monopoly
 {
     public class Game
     {
-        private GameBoard Gameboard;
+        public GameBoard Gameboard;
         private Random random;
-        private List<GameSquare> squares;
-        private Player[] players;
-        private Player player1;
-        private Player player2;
-
-        public IReadOnlyList<GameSquare> Squares
-        {
-            get => squares;
-        }
+        private List<Player> players;
+  
 
         public Game()
         {
             Gameboard = new GameBoard();
-            players = { new Player(), new Player()}; //TODO make player array working
+            players = new List<Player>();
             random = new Random();
+            for (int i = 0; i < 2; i++)
+            {
+                players.Add(new Player());
+            }
         }
 
         public int Roll(int xPlayer)
@@ -38,7 +35,7 @@ namespace Monopoly
         {
             foreach (GameSquare square in Gameboard.Squares)
             {
-                if (square.ID == squareID)
+                if (square.SquareId == squareID)
                 {
                     return square;
                 }

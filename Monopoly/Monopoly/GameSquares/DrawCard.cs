@@ -10,7 +10,7 @@ namespace Monopoly.GameSquares
     {
         private int cardType;
 
-        public DrawCard(int squareId, int cardType): base(squareId)
+        public DrawCard(int squareId, int cardType, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
             this.cardType = cardType;
         }

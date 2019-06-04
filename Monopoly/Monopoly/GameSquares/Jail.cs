@@ -8,7 +8,7 @@ namespace Monopoly.GameSquares
 {
     class Jail: Normal
     {
-        public Jail(int squareId): base(squareId)
+        public Jail(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
             
         }

@@ -9,9 +9,10 @@ namespace Monopoly
 {
     public class Player
     {
+        private int position;
         public int Position
         {
-            get { return Position }
+            get { return position; }
 
             set
             {
@@ -19,12 +20,13 @@ namespace Monopoly
                 if (newPosition >= 40 && newPosition <= 80)
                 {
                     Position = newPosition - 40;
+                    Cash += 200;
                 }
                 else
                 {
                     if(newPosition >= 80)
                     {
-                        throw new Exception(RollIsToBigException); //whoopsie daisy
+                        throw new RollIsToBigException("Roll is to big"); //whoopsie daisy
                     }
                     else
                     {
@@ -34,13 +36,10 @@ namespace Monopoly
             }
         }
 
-        public Player(int startPosistion)
-        {
-            Position = startPosistion;
-        }
         public int Cash { get; set; }
         public bool Jailed { get; set; }
         public int LastRoll { get; set; }
+
         private List<RealEstate> realEstates;
 
         public IReadOnlyList<RealEstate> RealEstates
@@ -48,8 +47,16 @@ namespace Monopoly
             get { return realEstates.AsReadOnly(); }
         }
 
+        public Player(int startPosistion)
+        {
+            Position = startPosistion;
+        }
+
         public Player()
         {
+            Cash = 1500;
+            position = 0;
+            LastRoll = 0;
             realEstates = new List<RealEstate>();
         }
 

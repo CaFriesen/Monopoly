@@ -30,7 +30,7 @@ namespace Monopoly
             }
         }
 
-        public Street(int squareId, string name, int price, int rent, int housePrice): base(squareId, name, price)
+        public Street(int squareId, int price, int rent, int housePrice, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
             baseRent = rent;
             this.housePrice = housePrice;

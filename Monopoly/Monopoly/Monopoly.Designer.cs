@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gbUtilitiesP1 = new System.Windows.Forms.GroupBox();
-            this.lblP1Rent = new System.Windows.Forms.Label();
+            this.lblRentP1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNamePropertyP1 = new System.Windows.Forms.Label();
             this.btnP1profile = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lbP2Properties = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblRentP2 = new System.Windows.Forms.Label();
             this.gbUtilitiesP1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbUtilitiesP2.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             // gbUtilitiesP1
             // 
-            this.gbUtilitiesP1.Controls.Add(this.lblP1Rent);
+            this.gbUtilitiesP1.Controls.Add(this.lblRentP1);
             this.gbUtilitiesP1.Controls.Add(this.panel1);
             this.gbUtilitiesP1.Controls.Add(this.btnP1profile);
             this.gbUtilitiesP1.Controls.Add(this.btnP1RealEstate);
@@ -64,21 +65,21 @@
             this.gbUtilitiesP1.Controls.Add(this.lbP1Properties);
             this.gbUtilitiesP1.Controls.Add(this.btnBuy);
             this.gbUtilitiesP1.Controls.Add(this.btnRoll);
-            this.gbUtilitiesP1.Location = new System.Drawing.Point(11, 778);
+            this.gbUtilitiesP1.Location = new System.Drawing.Point(11, 1045);
             this.gbUtilitiesP1.Name = "gbUtilitiesP1";
             this.gbUtilitiesP1.Size = new System.Drawing.Size(936, 229);
             this.gbUtilitiesP1.TabIndex = 0;
             this.gbUtilitiesP1.TabStop = false;
             this.gbUtilitiesP1.Text = "Utilities Player 1";
             // 
-            // lblP1Rent
+            // lblRentP1
             // 
-            this.lblP1Rent.AutoSize = true;
-            this.lblP1Rent.Location = new System.Drawing.Point(778, 167);
-            this.lblP1Rent.Name = "lblP1Rent";
-            this.lblP1Rent.Size = new System.Drawing.Size(34, 25);
-            this.lblP1Rent.TabIndex = 7;
-            this.lblP1Rent.Text = "$0";
+            this.lblRentP1.AutoSize = true;
+            this.lblRentP1.Location = new System.Drawing.Point(799, 177);
+            this.lblRentP1.Name = "lblRentP1";
+            this.lblRentP1.Size = new System.Drawing.Size(34, 25);
+            this.lblRentP1.TabIndex = 7;
+            this.lblRentP1.Text = "$0";
             // 
             // panel1
             // 
@@ -92,7 +93,7 @@
             // lblNamePropertyP1
             // 
             this.lblNamePropertyP1.AutoSize = true;
-            this.lblNamePropertyP1.Location = new System.Drawing.Point(11, 31);
+            this.lblNamePropertyP1.Location = new System.Drawing.Point(11, 26);
             this.lblNamePropertyP1.Name = "lblNamePropertyP1";
             this.lblNamePropertyP1.Size = new System.Drawing.Size(34, 25);
             this.lblNamePropertyP1.TabIndex = 8;
@@ -110,11 +111,12 @@
             // 
             // btnP1RealEstate
             // 
+            this.btnP1RealEstate.BackColor = System.Drawing.SystemColors.Control;
             this.btnP1RealEstate.Location = new System.Drawing.Point(768, 29);
             this.btnP1RealEstate.Name = "btnP1RealEstate";
             this.btnP1RealEstate.Size = new System.Drawing.Size(162, 192);
             this.btnP1RealEstate.TabIndex = 5;
-            this.btnP1RealEstate.UseVisualStyleBackColor = true;
+            this.btnP1RealEstate.UseVisualStyleBackColor = false;
             // 
             // btnP1Upgrade
             // 
@@ -155,6 +157,7 @@
             // 
             // gbUtilitiesP2
             // 
+            this.gbUtilitiesP2.Controls.Add(this.lblRentP2);
             this.gbUtilitiesP2.Controls.Add(this.panel2);
             this.gbUtilitiesP2.Controls.Add(this.lblNamePropertyP2);
             this.gbUtilitiesP2.Controls.Add(this.btnP2profile);
@@ -163,7 +166,7 @@
             this.gbUtilitiesP2.Controls.Add(this.button1);
             this.gbUtilitiesP2.Controls.Add(this.lbP2Properties);
             this.gbUtilitiesP2.Controls.Add(this.button2);
-            this.gbUtilitiesP2.Location = new System.Drawing.Point(953, 778);
+            this.gbUtilitiesP2.Location = new System.Drawing.Point(953, 1045);
             this.gbUtilitiesP2.Name = "gbUtilitiesP2";
             this.gbUtilitiesP2.Size = new System.Drawing.Size(931, 229);
             this.gbUtilitiesP2.TabIndex = 1;
@@ -209,11 +212,12 @@
             // 
             // btnP2RealEstate
             // 
+            this.btnP2RealEstate.BackColor = System.Drawing.SystemColors.Control;
             this.btnP2RealEstate.Location = new System.Drawing.Point(769, 24);
             this.btnP2RealEstate.Name = "btnP2RealEstate";
             this.btnP2RealEstate.Size = new System.Drawing.Size(162, 192);
             this.btnP2RealEstate.TabIndex = 6;
-            this.btnP2RealEstate.UseVisualStyleBackColor = true;
+            this.btnP2RealEstate.UseVisualStyleBackColor = false;
             // 
             // btnP2Upgrade
             // 
@@ -251,11 +255,21 @@
             this.button2.Text = "Roll";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // lblRentP2
+            // 
+            this.lblRentP2.AutoSize = true;
+            this.lblRentP2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblRentP2.Location = new System.Drawing.Point(810, 177);
+            this.lblRentP2.Name = "lblRentP2";
+            this.lblRentP2.Size = new System.Drawing.Size(34, 25);
+            this.lblRentP2.TabIndex = 8;
+            this.lblRentP2.Text = "$0";
+            // 
             // Monopoly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 1016);
+            this.ClientSize = new System.Drawing.Size(1896, 1336);
             this.Controls.Add(this.gbUtilitiesP2);
             this.Controls.Add(this.gbUtilitiesP1);
             this.Name = "Monopoly";
@@ -288,12 +302,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnP1profile;
         private System.Windows.Forms.Button btnP2profile;
-        private System.Windows.Forms.Label lblP1Rent;
+        private System.Windows.Forms.Label lblRentP1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNamePropertyP1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNamePropertyP2;
+        private System.Windows.Forms.Label lblRentP2;
     }
 }
 

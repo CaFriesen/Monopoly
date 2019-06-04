@@ -8,7 +8,7 @@ namespace Monopoly
 {
     class Taxes: ActionSquare
     {
-        public Taxes(int squareId): base(squareId)
+        public Taxes(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
         }
 

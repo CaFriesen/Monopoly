@@ -9,7 +9,7 @@ namespace Monopoly
     class Bonusses: ActionSquare
     {
         private int bonusAmmount;
-        public Bonusses(int squareId, int bonus): base(squareId)
+        public Bonusses(int squareId, int bonus, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
             bonusAmmount = bonus;
         }

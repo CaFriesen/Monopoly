@@ -18,9 +18,17 @@ namespace Monopoly
         public GameBoard()
         {
             squares = new List<GameSquare>();
+            initMonopolyBoard();
         }
 
-        public void AddSquare(GameSquare square)
+        private void initMonopolyBoard()
+        {
+            for (int i = 0; i < 40; i++)
+            {
+                squares.Add(new Railroad(i, 200, 25, "West", 0, 0, 0));
+            }
+        }
+        private void AddSquare(GameSquare square)
         {
             squares.Add(square);
         }

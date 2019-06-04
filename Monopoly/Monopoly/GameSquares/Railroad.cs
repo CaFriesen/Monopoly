@@ -29,7 +29,7 @@ namespace Monopoly
             }
         }
 
-        public Railroad(int squareId, string name, int price, int rent): base(squareId, name, price)
+        public Railroad(int squareId, int price, int rent, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
             baseRent = rent;
         }

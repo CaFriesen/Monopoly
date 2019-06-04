@@ -9,14 +9,12 @@ namespace Monopoly
 {
     public abstract class RealEstate : GameSquare
     {
-        public string Name { get; private set; }
         public int Price { get; private set; }
         public bool Available { get; set; }
         public bool OnMortage { get; set; }
 
-        public RealEstate(int squareId, string name, int price) : base(squareId)
+        public RealEstate(int squareId, int price, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
-            Name = name;
             Price = price;
         }
     }

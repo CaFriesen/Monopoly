@@ -20,23 +20,26 @@ namespace Monopoly
         {
             InitializeComponent();
             game = new Game();
+            AddGameSquares();
         }
 
         private void AddGameSquares()
         {
-          foreach(GameSquare square in game.Squares)
+          foreach(GameSquare square in game.Gameboard.Squares)
             {
                 Button property = new Button();
-                property.Location = GetBoardLocation(square.ID, 10); //GameBoard toevoegen aan UI?
-                property.ForeColor = square.Color;
+                property.Location = GetBoardLocation(square.SquareId, 10); //GameBoard toevoegen aan UI?
+                property.ForeColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
+                property.Size = new Size(50, 50);
                 if(square is RealEstate)
                 {
-                    property.Text = square.Name + "\n" + square.Price;
+                    property.Text = (square as RealEstate).Name + "\n" + (square as RealEstate).Price;
                 }
                 else
                 {
                     property.Text = square.Name;
                 }
+                this.Controls.Add(property);
             }  
         }
         /// <summary>
@@ -52,20 +55,20 @@ namespace Monopoly
             switch (orderNumber / boardSideLength)
             {
                 case (3):
-                   loc.X = 450;
-                    loc.Y = ((boardSideLength * 75) + 12) - (orderNumber - (boardSideLength * 3)) * 75;//TODO vind uit waard de locaties op een form liggen
+                   loc.X = 0;
+                    loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50;//TODO vind uit waard de locaties op een form liggen
                     break;
                 case (2):
-                    loc.X = ((boardSideLength * 75) + 450) - (orderNumber - (boardSideLength * 2)) * 75;
-                    loc.Y = ((boardSideLength * 75) + 12);
+                    loc.X = (boardSideLength * 50) - (orderNumber - (boardSideLength * 2)) * 50;
+                    loc.Y = ((boardSideLength * 50) + 12);
                     break;
                 case (1):
-                    loc.X = 450 + 75 * boardSideLength;
-                    loc.Y = 12 + ((orderNumber - boardSideLength) * 75);
+                    loc.X = 50 * boardSideLength;
+                    loc.Y = 12 + ((orderNumber - boardSideLength) * 50);
                     break;
                 case (0):
-                    loc.X = (orderNumber * 75) + 12; //standaard waarden
-                    loc.Y = 450;
+                    loc.X = (orderNumber * 50); //standaard waarden
+                    loc.Y = 12;
                     break;
                 default:
                     break;
