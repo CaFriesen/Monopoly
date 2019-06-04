@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>11</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>847</x>
-      <y>132</y>
-      <w>176</w>
-      <h>154</h>
+      <x>976</x>
+      <y>0</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>UI
 --
@@ -18,10 +18,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>847</x>
-      <y>649</y>
-      <w>176</w>
-      <h>154</h>
+      <x>960</x>
+      <y>328</y>
+      <w>160</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>GameBoard
 --
@@ -34,21 +34,21 @@ AddSquare(): GameSquare</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>517</y>
-      <w>33</w>
-      <h>154</h>
+      <x>1016</x>
+      <y>280</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1089</x>
-      <y>638</y>
-      <w>231</w>
-      <h>154</h>
+      <x>680</x>
+      <y>368</y>
+      <w>168</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>GameSquare {abstract}
 --
@@ -64,10 +64,10 @@ Action(Player): void {abstract}</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1166</x>
-      <y>1133</y>
-      <w>176</w>
-      <h>154</h>
+      <x>432</x>
+      <y>720</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>GoToJail
 --
@@ -79,10 +79,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>913</y>
-      <w>297</w>
-      <h>154</h>
+      <x>160</x>
+      <y>560</y>
+      <w>216</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>RealEstate {Abstract}
 --
@@ -96,10 +96,10 @@ RealEstate(squareId: int, name: string, price: int)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1364</x>
-      <y>924</y>
-      <w>231</w>
-      <h>154</h>
+      <x>576</x>
+      <y>568</y>
+      <w>168</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>ActionSquare {Abstract}
 --
@@ -110,10 +110,10 @@ ActuionSquares(squareId: int)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1364</x>
-      <y>1133</y>
-      <w>198</w>
-      <h>154</h>
+      <x>576</x>
+      <y>720</y>
+      <w>144</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Taxes
 --
@@ -125,10 +125,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1584</x>
-      <y>1133</y>
-      <w>176</w>
-      <h>154</h>
+      <x>736</x>
+      <y>720</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Bonusses
 --
@@ -140,10 +140,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>968</x>
-      <y>1133</y>
-      <w>176</w>
-      <h>154</h>
+      <x>288</x>
+      <y>720</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Utility
 --
@@ -155,10 +155,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>1133</y>
-      <w>176</w>
-      <h>154</h>
+      <x>144</x>
+      <y>720</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Railroad
 --
@@ -170,10 +170,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>572</x>
-      <y>1133</y>
-      <w>176</w>
-      <h>154</h>
+      <x>0</x>
+      <y>720</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Street
 --
@@ -190,10 +190,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1452</x>
-      <y>1067</y>
-      <w>242</w>
-      <h>88</h>
+      <x>640</x>
+      <y>672</y>
+      <w>176</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;200.0;50.0;200.0;60.0</additional_attributes>
@@ -201,10 +201,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1254</x>
-      <y>1067</y>
-      <w>231</w>
-      <h>88</h>
+      <x>496</x>
+      <y>672</y>
+      <w>168</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>190.0;10.0;190.0;50.0;10.0;50.0;10.0;60.0</additional_attributes>
@@ -212,10 +212,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>869</x>
-      <y>1056</y>
-      <w>33</w>
-      <h>99</h>
+      <x>216</x>
+      <y>664</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
@@ -223,10 +223,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>671</x>
-      <y>1089</y>
-      <w>198</w>
-      <h>66</h>
+      <x>72</x>
+      <y>688</y>
+      <w>144</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>160.0;20.0;10.0;20.0;10.0;40.0</additional_attributes>
@@ -234,10 +234,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>803</x>
-      <y>1089</y>
-      <w>286</w>
-      <h>66</h>
+      <x>168</x>
+      <y>688</y>
+      <w>208</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;240.0;20.0;240.0;40.0</additional_attributes>
@@ -245,21 +245,21 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>781</y>
-      <w>308</w>
-      <h>154</h>
+      <x>256</x>
+      <y>472</y>
+      <w>528</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>260.0;10.0;260.0;110.0;10.0;110.0;10.0;120.0</additional_attributes>
+    <additional_attributes>640.0;10.0;640.0;100.0;10.0;100.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1199</x>
-      <y>880</y>
-      <w>308</w>
-      <h>66</h>
+      <x>456</x>
+      <y>536</y>
+      <w>224</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;260.0;20.0;260.0;40.0</additional_attributes>
@@ -267,22 +267,22 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1012</x>
-      <y>726</y>
-      <w>99</w>
-      <h>44</h>
+      <x>840</x>
+      <y>384</y>
+      <w>136</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>462</x>
-      <y>363</y>
-      <w>297</w>
-      <h>154</h>
+      <x>696</x>
+      <y>168</y>
+      <w>216</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Player
 --
@@ -300,10 +300,10 @@ RentUtilitys(int DiceRoll): int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>748</x>
-      <y>440</y>
-      <w>121</w>
-      <h>55</h>
+      <x>904</x>
+      <y>224</y>
+      <w>88</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -313,10 +313,10 @@ Players</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>847</x>
-      <y>374</y>
-      <w>176</w>
-      <h>154</h>
+      <x>976</x>
+      <y>176</y>
+      <w>128</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Game
 --
@@ -328,10 +328,10 @@ GetSquare(int): int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>275</y>
-      <w>33</w>
-      <h>121</h>
+      <x>1032</x>
+      <y>104</y>
+      <w>24</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -339,10 +339,10 @@ GetSquare(int): int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1320</x>
-      <y>440</y>
-      <w>231</w>
-      <h>154</h>
+      <x>1336</x>
+      <y>136</y>
+      <w>168</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>FileHandeling
 --
@@ -356,21 +356,21 @@ Export(FileName): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1012</x>
-      <y>506</y>
-      <w>330</w>
-      <h>33</h>
+      <x>1096</x>
+      <y>184</y>
+      <w>256</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1122</x>
-      <y>539</y>
-      <w>176</w>
-      <h>66</h>
+      <x>704</x>
+      <y>296</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>ISquareId &lt;&lt;Interface&gt;&gt;
 --
@@ -381,32 +381,32 @@ SquareId: int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1199</x>
-      <y>594</y>
-      <w>33</w>
-      <h>77</h>
+      <x>760</x>
+      <y>336</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1463</x>
-      <y>869</y>
-      <w>572</w>
-      <h>55</h>
+      <x>648</x>
+      <y>520</y>
+      <w>568</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;30.0;500.0;30.0;500.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;690.0;40.0;690.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1914</x>
-      <y>726</y>
-      <w>209</w>
-      <h>154</h>
+      <x>1128</x>
+      <y>416</y>
+      <w>152</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>DrawCard
 --
@@ -417,10 +417,10 @@ DrawCard(squareId: int,cardType: int)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1881</x>
-      <y>880</y>
-      <w>363</w>
-      <h>66</h>
+      <x>952</x>
+      <y>536</y>
+      <w>264</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;310.0;20.0;310.0;40.0</additional_attributes>
@@ -428,10 +428,10 @@ DrawCard(squareId: int,cardType: int)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2079</x>
-      <y>924</y>
-      <w>286</w>
-      <h>154</h>
+      <x>1096</x>
+      <y>568</y>
+      <w>208</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Normal {Abstract}
 --
@@ -442,10 +442,10 @@ Normal(squareId: int)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1771</x>
-      <y>1133</y>
-      <w>286</w>
-      <h>154</h>
+      <x>872</x>
+      <y>720</y>
+      <w>208</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Start
 --
@@ -457,10 +457,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2222</x>
-      <y>1067</y>
-      <w>33</w>
-      <h>88</h>
+      <x>1200</x>
+      <y>672</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
@@ -468,10 +468,10 @@ Action(player: Player): void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2079</x>
-      <y>1133</y>
-      <w>286</w>
-      <h>154</h>
+      <x>1096</x>
+      <y>720</y>
+      <w>208</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Jail
 --
@@ -483,10 +483,10 @@ Action(player: Player): void {Abstract}</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2387</x>
-      <y>1133</y>
-      <w>286</w>
-      <h>154</h>
+      <x>1320</x>
+      <y>720</y>
+      <w>208</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Parking
 --
@@ -498,10 +498,10 @@ Action(player: Player): void {Abstract}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2222</x>
-      <y>1089</y>
-      <w>330</w>
-      <h>66</h>
+      <x>1200</x>
+      <y>688</y>
+      <w>240</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;280.0;20.0;280.0;40.0</additional_attributes>
@@ -509,10 +509,10 @@ Action(player: Player): void {Abstract}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1661</x>
-      <y>1100</y>
-      <w>275</w>
-      <h>55</h>
+      <x>792</x>
+      <y>696</y>
+      <w>200</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;230.0;20.0;230.0;30.0</additional_attributes>
@@ -520,10 +520,10 @@ Action(player: Player): void {Abstract}</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>121</x>
-      <y>363</y>
-      <w>297</w>
-      <h>154</h>
+      <x>448</x>
+      <y>168</y>
+      <w>216</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Proposed Player
 --
@@ -542,38 +542,92 @@ BuyHotel(RealEstate): bool
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>649</y>
-      <w>231</w>
-      <h>154</h>
+      <x>1544</x>
+      <y>416</y>
+      <w>216</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>GameCard
 --
-
---</panel_attributes>
+CardType: int
+--
+GameCard(cardType: int)
+CardAction(player: Player): void {Abstract}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>737</y>
-      <w>99</w>
-      <h>44</h>
+      <x>640</x>
+      <y>672</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=*</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1452</x>
-      <y>1067</y>
-      <w>33</w>
-      <h>88</h>
+      <x>1272</x>
+      <y>464</y>
+      <w>288</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*</panel_attributes>
+    <additional_attributes>340.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1544</x>
+      <y>584</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>GoToStart
+--
+--
+GameCard(cardType: int)
+CardAction(player: Player): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1616</x>
+      <y>520</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1728</x>
+      <y>584</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>GetOutOfJail
+--
+--
+GameCard(cardType: int)
+CardAction(player: Player): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1616</x>
+      <y>536</y>
+      <w>208</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;240.0;20.0;240.0;60.0</additional_attributes>
   </element>
 </diagram>
