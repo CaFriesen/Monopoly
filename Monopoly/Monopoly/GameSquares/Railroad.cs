@@ -6,26 +6,34 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Railroad: RealEstate
+    public class Railroad: RealEstate
     {
         private int baseRent;
-        private Player owner;
 
         public int Rent
         {
             get
             {
-                int multiplier = 0;
 
-                foreach (RealEstate estate in owner.RealEstates)
+                if (Owner != null)
                 {
-                    if (estate is Railroad)
+                    int multiplier = 0;
+
+                    foreach (RealEstate estate in Owner.RealEstates)
                     {
-                        multiplier++;
+                        if (estate is Railroad)
+                        {
+                            multiplier++;
+                        }
                     }
+
+                    return baseRent * multiplier;
+                }
+                else
+                {
+                    return baseRent;
                 }
 
-                return baseRent * multiplier;
             }
         }
 
@@ -36,16 +44,10 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            if (Available)
-            {
-                if (player.Buy(this))
-                {
-                    owner = player;
-                }
-            }
-            else
+            if (!Available && player != Owner)
             {
                 player.Cash -= Rent;
+                Owner.Cash += Rent;
             }
         }
     }

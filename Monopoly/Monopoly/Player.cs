@@ -60,9 +60,12 @@ namespace Monopoly
             realEstates = new List<RealEstate>();
         }
 
-        public bool Buy(RealEstate estate)
+        public void AddRealEstate(RealEstate estate)
         {
-            return false;
+            if (this == estate.Owner)
+            {
+                realEstates.Add(estate);
+            }
         }
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Utility: RealEstate
+    public class Utility: RealEstate
     {
         private int baseRent;
-        private Player owner;
 
         public Utility(int squareId, int rent, int price, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
@@ -18,16 +17,10 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            if (Available)
-            {
-                if (player.Buy(this))
-                {
-                    owner = player;
-                }
-            }
-            else
+            if (!Available && player != Owner)
             {
                 player.Cash -= baseRent * player.LastRoll;
+                Owner.Cash += baseRent * player.LastRoll;
             }
         }
     }
