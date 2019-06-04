@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace Monopoly
 {
-    public partial class Monopoly : Form
+    public partial class UI : Form
     {
-        //TODO change Monopoly to UI 
+        //TODO change UI to UI 
 
         private Game game;
 
-        public Monopoly()
+        public UI()
         {
             InitializeComponent();
             game = new Game();
             AddGameSquares();
+            this.Size = new Size(1050, 750);
         }
 
         private void AddGameSquares()
@@ -39,6 +40,7 @@ namespace Monopoly
                 {
                     property.Text = square.Name;
                 }
+                property.Click += (o, d) => { MessageBox.Show(square.Info); };
                 this.Controls.Add(property);
             }  
         }

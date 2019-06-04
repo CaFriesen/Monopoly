@@ -16,7 +16,7 @@ namespace Monopoly
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Monopoly());
+            Application.Run(new UI());
         }
     }
 }

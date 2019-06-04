@@ -1,6 +1,6 @@
 ﻿namespace Monopoly
 {
-    partial class Monopoly
+    partial class UI
     {
         /// <summary>
         /// Required designer variable.
@@ -265,15 +265,15 @@
             this.lblRentP2.TabIndex = 8;
             this.lblRentP2.Text = "$0";
             // 
-            // Monopoly
+            // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1896, 1336);
             this.Controls.Add(this.gbUtilitiesP2);
             this.Controls.Add(this.gbUtilitiesP1);
-            this.Name = "Monopoly";
-            this.Text = "Monopoly";
+            this.Name = "UI";
+            this.Text = "UI";
             this.gbUtilitiesP1.ResumeLayout(false);
             this.gbUtilitiesP1.PerformLayout();
             this.panel1.ResumeLayout(false);
