@@ -1,0 +1,8 @@
+kaarten:
+- geld krijgen
+- geld geven
+- go to cards gwn de positie update actions worden uitgevoerd
+
+Buy knop:
+word gedisabled als het niet kan worden gekocht
+

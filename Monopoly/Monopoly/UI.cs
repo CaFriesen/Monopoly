@@ -36,7 +36,10 @@ namespace Monopoly
           foreach(GameSquare square in game.Gameboard.Squares)
             {
                 Button property = new Button();
-                property.Location = GetBoardLocation(square.SquareId, 10); //GameBoard toevoegen aan UI?
+                Label level = new Label();
+                property.Location = GetBoardLocation(square.SquareId, 10);
+                level.Location = GetBoardLocation(square.SquareId, 10, 25, 0);
+                level.Text = "5";
                 property.ForeColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
                 property.Size = new Size(50, 50);
                 if(square is RealEstate)
@@ -49,6 +52,7 @@ namespace Monopoly
                 }
                 //property.Click += (o, d) => { MessageBox.Show(square.Info); };
                 this.Controls.Add(property);
+                this.Controls.Add(level);
             }  
         }
         /// <summary>
@@ -65,7 +69,7 @@ namespace Monopoly
             {
                 case (3):
                    loc.X = 0;
-                    loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50;//TODO vind uit waard de locaties op een form liggen
+                    loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50;
                     break;
                 case (2):
                     loc.X = (boardSideLength * 50) - (orderNumber - (boardSideLength * 2)) * 50;
@@ -76,8 +80,35 @@ namespace Monopoly
                     loc.Y = 12 + ((orderNumber - boardSideLength) * 50);
                     break;
                 case (0):
-                    loc.X = (orderNumber * 50); //standaard waarden
+                    loc.X = (orderNumber * 50); 
                     loc.Y = 12;
+                    break;
+                default:
+                    break;
+            }
+            return loc;
+        }
+
+        private Point GetBoardLocation(int orderNumber, int boardSideLength, int offsetX, int offsetY)
+        {
+            Point loc = new Point();
+            switch (orderNumber / boardSideLength)
+            {
+                case (3):
+                    loc.X = 0 + offsetX;
+                    loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50 + offsetY;
+                    break;
+                case (2):
+                    loc.X = (boardSideLength * 50) - (orderNumber - (boardSideLength * 2)) * 50 + offsetX;
+                    loc.Y = ((boardSideLength * 50) + 12) + offsetY;
+                    break;
+                case (1):
+                    loc.X = 50 * boardSideLength + offsetX;
+                    loc.Y = 12 + ((orderNumber - boardSideLength) * 50) + offsetY;
+                    break;
+                case (0):
+                    loc.X = (orderNumber * 50) + offsetX;
+                    loc.Y = 12 + offsetY;
                     break;
                 default:
                     break;
