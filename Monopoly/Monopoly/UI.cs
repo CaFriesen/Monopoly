@@ -16,6 +16,9 @@ namespace Monopoly
 
         private Game game;
 
+        private Button P1;
+        private Button P2;
+
         public UI()
         {
             InitializeComponent();
@@ -28,6 +31,23 @@ namespace Monopoly
 
         private void AddPlayers()
         {
+            P1 = new Button();
+            P1.Size = new Size(12, 12);
+            P1.BackColor = Color.Blue;
+            P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 12, 0);
+
+
+            P2 = new Button();
+            P2.Size = new Size(12, 12);
+            P2.BackColor = Color.Red;
+            P2.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 0);
+
+            this.Controls.Add(P1);
+            P1.BringToFront();
+
+            this.Controls.Add(P2);
+            P2.BringToFront();
+
 
         }
 
@@ -36,13 +56,10 @@ namespace Monopoly
           foreach(GameSquare square in game.Gameboard.Squares)
             {
                 Button property = new Button();
-                Label level = new Label();
-                property.Location = GetBoardLocation(square.SquareId, 10);
-                level.Location = GetBoardLocation(square.SquareId, 10, 25, 0);
-                level.Text = "5";
+                property.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength);
                 property.ForeColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
                 property.Size = new Size(50, 50);
-                if(square is RealEstate)
+                if (square is RealEstate)
                 {
                     property.Text = (square as RealEstate).Name + "\n" + (square as RealEstate).Price;
                 }
@@ -50,9 +67,17 @@ namespace Monopoly
                 {
                     property.Text = square.Name;
                 }
+                //property.
                 //property.Click += (o, d) => { MessageBox.Show(square.Info); };
                 this.Controls.Add(property);
+
+                Label level = new Label();
+                level.Size = new Size(12, 12);
+                level.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength);
+                level.Text = "5";
+                level.BackColor = Color.Transparent;
                 this.Controls.Add(level);
+                level.BringToFront();
             }  
         }
         /// <summary>
@@ -94,7 +119,7 @@ namespace Monopoly
             Point loc = new Point();
             switch (orderNumber / boardSideLength)
             {
-                case (3):
+                case (3)://getallen boven 40 afstraffen
                     loc.X = 0 + offsetX;
                     loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50 + offsetY;
                     break;
@@ -119,7 +144,13 @@ namespace Monopoly
         private void btnRollP1_Click(object sender, EventArgs e)
         {
             game.Roll(0);
+            P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 0);
+        }
 
+        private void btnRollP2_Click(object sender, EventArgs e)
+        {
+            game.Roll(1);
+            P2.Location = GetBoardLocation(game.Players[1].Position, game.Gameboard.BoardSideLength, 24, 0);
         }
     }
 }

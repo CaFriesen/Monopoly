@@ -120,6 +120,7 @@
             // 
             // btnP1Upgrade
             // 
+            this.btnP1Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnP1Upgrade.Location = new System.Drawing.Point(632, 129);
             this.btnP1Upgrade.Name = "btnP1Upgrade";
             this.btnP1Upgrade.Size = new System.Drawing.Size(129, 94);
@@ -138,6 +139,7 @@
             // 
             // btnBuy
             // 
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuy.Location = new System.Drawing.Point(631, 28);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(130, 94);
@@ -147,6 +149,7 @@
             // 
             // btnRollP1
             // 
+            this.btnRollP1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRollP1.Location = new System.Drawing.Point(6, 28);
             this.btnRollP1.Name = "btnRollP1";
             this.btnRollP1.Size = new System.Drawing.Size(224, 94);
@@ -231,6 +234,7 @@
             // 
             // btnP2Upgrade
             // 
+            this.btnP2Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnP2Upgrade.Location = new System.Drawing.Point(632, 129);
             this.btnP2Upgrade.Name = "btnP2Upgrade";
             this.btnP2Upgrade.Size = new System.Drawing.Size(129, 92);
@@ -240,6 +244,7 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(632, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 97);
@@ -258,12 +263,14 @@
             // 
             // btnRollP2
             // 
+            this.btnRollP2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRollP2.Location = new System.Drawing.Point(6, 28);
             this.btnRollP2.Name = "btnRollP2";
             this.btnRollP2.Size = new System.Drawing.Size(224, 94);
             this.btnRollP2.TabIndex = 2;
             this.btnRollP2.Text = "Roll";
             this.btnRollP2.UseVisualStyleBackColor = true;
+            this.btnRollP2.Click += new System.EventHandler(this.btnRollP2_Click);
             // 
             // UI
             // 

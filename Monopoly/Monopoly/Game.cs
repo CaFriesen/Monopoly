@@ -20,7 +20,7 @@ namespace Monopoly
 
         public Game()
         {
-            Gameboard = new GameBoard();
+            Gameboard = new GameBoard(10);
             players = new List<Player>();
             random = new Random();
             for (int i = 0; i < 2; i++)

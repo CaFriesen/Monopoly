@@ -19,7 +19,7 @@ namespace Monopoly
                 int newPosition = Position + value;
                 if (newPosition >= 40 && newPosition <= 80)
                 {
-                    Position = newPosition - 40;
+                    position = newPosition - 40;
                     Cash += 200;
                 }
                 else
@@ -30,7 +30,7 @@ namespace Monopoly
                     }
                     else
                     {
-                        Position = newPosition;
+                        position = newPosition;
                     }
                 }
             }

@@ -15,9 +15,12 @@ namespace Monopoly
             get => squares;
         }
 
-        public GameBoard()
+        public int BoardSideLength { get; set; }
+
+        public GameBoard(int boardSideLength)
         {
             squares = new List<GameSquare>();
+            BoardSideLength = boardSideLength;
             initMonopolyBoard();
         }
 
