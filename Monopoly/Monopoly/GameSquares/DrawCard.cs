@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly.GameSquares
 {
+    [Serializable]
     class DrawCard: GameSquare
     {
         private int cardType;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public class GameBoard
     {
         private List<GameSquare> squares;
@@ -28,7 +29,7 @@ namespace Monopoly
         {
             for (int i = 0; i < 40; i++)
             {
-                squares.Add(new Railroad(i, 200, 25, "West", 0, 0, 0));
+                squares.Add(new Taxes(i, "West", 0, 200, 0));
             }
         }
         private void AddSquare(GameSquare square)

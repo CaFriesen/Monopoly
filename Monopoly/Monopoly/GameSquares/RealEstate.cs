@@ -8,6 +8,7 @@ using System.Windows.Forms.PropertyGridInternal;
 
 namespace Monopoly
 {
+    [Serializable]
     public abstract class RealEstate : GameSquare
     {
         public int Price { get; private set; }

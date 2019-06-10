@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public class Street: RealEstate
     {
         private int baseRent;

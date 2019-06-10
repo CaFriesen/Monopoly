@@ -36,7 +36,7 @@
             this.btnP1RealEstate = new System.Windows.Forms.Button();
             this.btnP1Upgrade = new System.Windows.Forms.Button();
             this.lbP1Properties = new System.Windows.Forms.ListBox();
-            this.btnBuy = new System.Windows.Forms.Button();
+            this.btnBuyP1 = new System.Windows.Forms.Button();
             this.btnRollP1 = new System.Windows.Forms.Button();
             this.gbUtilitiesP2 = new System.Windows.Forms.GroupBox();
             this.lblRentP2 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.btnP2profile = new System.Windows.Forms.Button();
             this.btnP2RealEstate = new System.Windows.Forms.Button();
             this.btnP2Upgrade = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuyP2 = new System.Windows.Forms.Button();
             this.lbP2Properties = new System.Windows.Forms.ListBox();
             this.btnRollP2 = new System.Windows.Forms.Button();
             this.gbUtilitiesP1.SuspendLayout();
@@ -63,7 +63,7 @@
             this.gbUtilitiesP1.Controls.Add(this.btnP1RealEstate);
             this.gbUtilitiesP1.Controls.Add(this.btnP1Upgrade);
             this.gbUtilitiesP1.Controls.Add(this.lbP1Properties);
-            this.gbUtilitiesP1.Controls.Add(this.btnBuy);
+            this.gbUtilitiesP1.Controls.Add(this.btnBuyP1);
             this.gbUtilitiesP1.Controls.Add(this.btnRollP1);
             this.gbUtilitiesP1.Location = new System.Drawing.Point(11, 1045);
             this.gbUtilitiesP1.Name = "gbUtilitiesP1";
@@ -137,15 +137,15 @@
             this.lbP1Properties.Size = new System.Drawing.Size(389, 196);
             this.lbP1Properties.TabIndex = 2;
             // 
-            // btnBuy
+            // btnBuyP1
             // 
-            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuy.Location = new System.Drawing.Point(631, 28);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(130, 94);
-            this.btnBuy.TabIndex = 1;
-            this.btnBuy.Text = "Buy";
-            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuyP1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuyP1.Location = new System.Drawing.Point(631, 28);
+            this.btnBuyP1.Name = "btnBuyP1";
+            this.btnBuyP1.Size = new System.Drawing.Size(130, 94);
+            this.btnBuyP1.TabIndex = 1;
+            this.btnBuyP1.Text = "Buy";
+            this.btnBuyP1.UseVisualStyleBackColor = true;
             // 
             // btnRollP1
             // 
@@ -166,7 +166,7 @@
             this.gbUtilitiesP2.Controls.Add(this.btnP2profile);
             this.gbUtilitiesP2.Controls.Add(this.btnP2RealEstate);
             this.gbUtilitiesP2.Controls.Add(this.btnP2Upgrade);
-            this.gbUtilitiesP2.Controls.Add(this.button1);
+            this.gbUtilitiesP2.Controls.Add(this.btnBuyP2);
             this.gbUtilitiesP2.Controls.Add(this.lbP2Properties);
             this.gbUtilitiesP2.Controls.Add(this.btnRollP2);
             this.gbUtilitiesP2.Location = new System.Drawing.Point(953, 1045);
@@ -242,15 +242,15 @@
             this.btnP2Upgrade.Text = "Upgrade";
             this.btnP2Upgrade.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBuyP2
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(632, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 97);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Buy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuyP2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuyP2.Location = new System.Drawing.Point(632, 24);
+            this.btnBuyP2.Name = "btnBuyP2";
+            this.btnBuyP2.Size = new System.Drawing.Size(130, 97);
+            this.btnBuyP2.TabIndex = 3;
+            this.btnBuyP2.Text = "Buy";
+            this.btnBuyP2.UseVisualStyleBackColor = true;
             // 
             // lbP2Properties
             // 
@@ -299,12 +299,12 @@
         private System.Windows.Forms.Button btnP1RealEstate;
         private System.Windows.Forms.Button btnP1Upgrade;
         private System.Windows.Forms.ListBox lbP1Properties;
-        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.Button btnBuyP1;
         private System.Windows.Forms.Button btnRollP1;
         private System.Windows.Forms.GroupBox gbUtilitiesP2;
         private System.Windows.Forms.Button btnP2RealEstate;
         private System.Windows.Forms.Button btnP2Upgrade;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuyP2;
         private System.Windows.Forms.ListBox lbP2Properties;
         private System.Windows.Forms.Button btnRollP2;
         private System.Windows.Forms.Button btnP1profile;

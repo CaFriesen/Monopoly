@@ -4,22 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Monopoly
 {
     public class FileHandeling
     {
-        GameBoard Board;
+        Game Monopoly;
 
-        public FileHandeling(GameBoard board)
+        public FileHandeling(Game monopoly)
         {
-            Board = board;
+            Monopoly = monopoly;
         }
 
         public void Save()
         {
-            //using(Stream s = File.Open()
-               // Board.Squares
+            
+            using (StreamWriter w = new StreamWriter(File.Open(AppDomain.CurrentDomain.BaseDirectory + "BoardData.txt", FileMode.Create)))
+            {
+                foreach (GameSquare square in Monopoly.Gameboard.Squares)
+                {
+                    w.WriteLine(square.ToString());
+                }
+            }
+            IFormatter formatter = new BinaryFormatter();
+            using (Stream stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.txt", FileMode.Create))
+            {
+                formatter.Serialize(stream, Monopoly.Gameboard);
+            }
         }
 
         public void Load()

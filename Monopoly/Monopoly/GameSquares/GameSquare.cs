@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+
+    [Serializable]
     public abstract class GameSquare : ISquareId
     {
         

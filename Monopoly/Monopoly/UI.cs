@@ -12,10 +12,9 @@ namespace Monopoly
 {
     public partial class UI : Form
     {
-        //TODO change UI to UI 
 
         private Game game;
-
+        private bool turn;
         private Button P1;
         private Button P2;
 
@@ -141,16 +140,56 @@ namespace Monopoly
             return loc;
         }
 
+        private void Buyable(GameSquare square, int player)
+        {
+            if (square is RealEstate)
+            {
+                btnBuyP1.Enabled = true;
+                btnBuyP2.Enabled = true;
+
+                if (square is Street)
+                {
+                    foreach (RealEstate estate in game.Players[player].RealEstates)
+                    {
+                        if (square == estate)
+                        {
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+                btnBuyP1.Enabled = false;
+                btnBuyP2.Enabled = false;
+            }
+        }
+
         private void btnRollP1_Click(object sender, EventArgs e)
         {
-            game.Roll(0);
-            P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 0);
+            int player;
+            
+            if (turn)
+            {
+                player = 1;
+                P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, player);
+            }
+            else
+            {
+                player = 0;
+                P2.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, player);
+            }
+
+            game.Roll(player);
+            Buyable(game.GetGameSquare(game.Players[0].Position), player);
+            turn = !turn;
         }
 
         private void btnRollP2_Click(object sender, EventArgs e)
         {
             game.Roll(1);
             P2.Location = GetBoardLocation(game.Players[1].Position, game.Gameboard.BoardSideLength, 24, 0);
+            Buyable(game.GetGameSquare(game.Players[1].Position), 1);
         }
     }
 }

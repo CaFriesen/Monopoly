@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public class Taxes: ActionSquare
     {
         public Taxes(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)

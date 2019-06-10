@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly.GameSquares
 {
+    [Serializable]
     public class Start: ActionSquare
     {
         public Start(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
