@@ -15,7 +15,8 @@ namespace Monopoly
         public int SquareId { get; private set; }
         public string Name { get; private set; }
         public SquareColor Color { get; private set; }
-        
+        public string Info { get; set; }
+
 
         public GameSquare(int squareId, string name, int r, int g, int b)
         {

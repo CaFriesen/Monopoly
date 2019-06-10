@@ -14,38 +14,40 @@ namespace Monopoly
     {
 
         private Game game;
-        private bool turn;
-        private Button P1;
-        private Button P2;
+        private List<Button> players;
+        private int player;
 
         public UI()
         {
-            InitializeComponent();
             game = new Game();
+            players = new List<Button>();
+            player = 0;
+
+
+            InitializeComponent();
+            
             AddGameSquares();
             AddPlayers();
             this.Size = new Size(1050, 750);
-
         }
 
         private void AddPlayers()
         {
-            P1 = new Button();
-            P1.Size = new Size(12, 12);
-            P1.BackColor = Color.Blue;
-            P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 12, 0);
+            players.Add(new Button());
+            players[0].Size = new Size(12, 12);
+            players[0].BackColor = Color.Blue;
+            players[0].Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 12, 28);
+            
+            players.Add(new Button());
+            players[1].Size = new Size(12, 12);
+            players[1].BackColor = Color.Red;
+            players[1].Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 28);
+            
+            this.Controls.Add(players[0]);
+            players[0].BringToFront();
 
-
-            P2 = new Button();
-            P2.Size = new Size(12, 12);
-            P2.BackColor = Color.Red;
-            P2.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 0);
-
-            this.Controls.Add(P1);
-            P1.BringToFront();
-
-            this.Controls.Add(P2);
-            P2.BringToFront();
+            this.Controls.Add(players[1]);
+            players[1].BringToFront();
 
 
         }
@@ -55,7 +57,7 @@ namespace Monopoly
           foreach(GameSquare square in game.Gameboard.Squares)
             {
                 Button property = new Button();
-                property.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength);
+                property.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength, 0, 28);
                 property.ForeColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
                 property.Size = new Size(50, 50);
                 if (square is RealEstate)
@@ -66,13 +68,12 @@ namespace Monopoly
                 {
                     property.Text = square.Name;
                 }
-                //property.
-                //property.Click += (o, d) => { MessageBox.Show(square.Info); };
+                property.Click += (o, d) => { MessageBox.Show(square.Info); };
                 this.Controls.Add(property);
 
                 Label level = new Label();
                 level.Size = new Size(12, 12);
-                level.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength);
+                level.Location = GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength, 0, 28);
                 level.Text = "5";
                 level.BackColor = Color.Transparent;
                 this.Controls.Add(level);
@@ -145,7 +146,6 @@ namespace Monopoly
             if (square is RealEstate)
             {
                 btnBuyP1.Enabled = true;
-                btnBuyP2.Enabled = true;
 
                 if (square is Street)
                 {
@@ -161,35 +161,38 @@ namespace Monopoly
             else
             {
                 btnBuyP1.Enabled = false;
-                btnBuyP2.Enabled = false;
             }
         }
 
         private void btnRollP1_Click(object sender, EventArgs e)
         {
-            int player;
-            
-            if (turn)
+            Roll();
+            Buyable(game.GetGameSquare(game.Players[0].Position), player);
+            game.GetGameSquare(game.Players[0].Position).Action(game.Players[player]);
+        }
+
+        private void Roll()
+        {
+            if (player == 0)
             {
                 player = 1;
-                P1.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, player);
             }
             else
             {
                 player = 0;
-                P2.Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, player);
             }
-
             game.Roll(player);
-            Buyable(game.GetGameSquare(game.Players[0].Position), player);
-            turn = !turn;
+            players[player].Location = GetBoardLocation(game.Players[player].Position, game.Gameboard.BoardSideLength, 12 + player * 12, 28);
         }
 
-        private void btnRollP2_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            game.Roll(1);
-            P2.Location = GetBoardLocation(game.Players[1].Position, game.Gameboard.BoardSideLength, 24, 0);
-            Buyable(game.GetGameSquare(game.Players[1].Position), 1);
+            game.fileHandler.Save();
+        }
+
+        private void tsLoad_Click(object sender, EventArgs e)
+        {
+            game.fileHandler.Load();
         }
     }
 }

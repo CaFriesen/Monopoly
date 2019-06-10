@@ -29,34 +29,27 @@
         private void InitializeComponent()
         {
             this.gbUtilitiesP1 = new System.Windows.Forms.GroupBox();
+            this.lblCash = new System.Windows.Forms.Label();
             this.lblRentP1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNamePropertyP1 = new System.Windows.Forms.Label();
-            this.btnP1profile = new System.Windows.Forms.Button();
             this.btnP1RealEstate = new System.Windows.Forms.Button();
             this.btnP1Upgrade = new System.Windows.Forms.Button();
             this.lbP1Properties = new System.Windows.Forms.ListBox();
             this.btnBuyP1 = new System.Windows.Forms.Button();
             this.btnRollP1 = new System.Windows.Forms.Button();
-            this.gbUtilitiesP2 = new System.Windows.Forms.GroupBox();
-            this.lblRentP2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNamePropertyP2 = new System.Windows.Forms.Label();
-            this.btnP2profile = new System.Windows.Forms.Button();
-            this.btnP2RealEstate = new System.Windows.Forms.Button();
-            this.btnP2Upgrade = new System.Windows.Forms.Button();
-            this.btnBuyP2 = new System.Windows.Forms.Button();
-            this.lbP2Properties = new System.Windows.Forms.ListBox();
-            this.btnRollP2 = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsSave = new System.Windows.Forms.ToolStripButton();
+            this.tsLoad = new System.Windows.Forms.ToolStripButton();
+            this.btnP1profile = new System.Windows.Forms.Button();
             this.gbUtilitiesP1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gbUtilitiesP2.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbUtilitiesP1
             // 
+            this.gbUtilitiesP1.Controls.Add(this.lblCash);
             this.gbUtilitiesP1.Controls.Add(this.lblRentP1);
             this.gbUtilitiesP1.Controls.Add(this.panel1);
             this.gbUtilitiesP1.Controls.Add(this.btnP1profile);
@@ -65,17 +58,26 @@
             this.gbUtilitiesP1.Controls.Add(this.lbP1Properties);
             this.gbUtilitiesP1.Controls.Add(this.btnBuyP1);
             this.gbUtilitiesP1.Controls.Add(this.btnRollP1);
-            this.gbUtilitiesP1.Location = new System.Drawing.Point(11, 1045);
+            this.gbUtilitiesP1.Location = new System.Drawing.Point(1229, 529);
             this.gbUtilitiesP1.Name = "gbUtilitiesP1";
-            this.gbUtilitiesP1.Size = new System.Drawing.Size(936, 229);
+            this.gbUtilitiesP1.Size = new System.Drawing.Size(643, 696);
             this.gbUtilitiesP1.TabIndex = 0;
             this.gbUtilitiesP1.TabStop = false;
             this.gbUtilitiesP1.Text = "Utilities Player 1";
             // 
+            // lblCash
+            // 
+            this.lblCash.AutoSize = true;
+            this.lblCash.Location = new System.Drawing.Point(6, 294);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(64, 25);
+            this.lblCash.TabIndex = 8;
+            this.lblCash.Text = "label1\r\n";
+            // 
             // lblRentP1
             // 
             this.lblRentP1.AutoSize = true;
-            this.lblRentP1.Location = new System.Drawing.Point(799, 177);
+            this.lblRentP1.Location = new System.Drawing.Point(493, 441);
             this.lblRentP1.Name = "lblRentP1";
             this.lblRentP1.Size = new System.Drawing.Size(34, 25);
             this.lblRentP1.TabIndex = 7;
@@ -85,7 +87,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Controls.Add(this.lblNamePropertyP1);
-            this.panel1.Location = new System.Drawing.Point(768, 29);
+            this.panel1.Location = new System.Drawing.Point(468, 235);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(162, 77);
             this.panel1.TabIndex = 2;
@@ -99,20 +101,10 @@
             this.lblNamePropertyP1.TabIndex = 8;
             this.lblNamePropertyP1.Text = "$0";
             // 
-            // btnP1profile
-            // 
-            this.btnP1profile.BackgroundImage = global::Monopoly.Properties.Resources.playing_tokensP1;
-            this.btnP1profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnP1profile.Location = new System.Drawing.Point(7, 129);
-            this.btnP1profile.Name = "btnP1profile";
-            this.btnP1profile.Size = new System.Drawing.Size(99, 100);
-            this.btnP1profile.TabIndex = 6;
-            this.btnP1profile.UseVisualStyleBackColor = true;
-            // 
             // btnP1RealEstate
             // 
             this.btnP1RealEstate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnP1RealEstate.Location = new System.Drawing.Point(768, 29);
+            this.btnP1RealEstate.Location = new System.Drawing.Point(468, 294);
             this.btnP1RealEstate.Name = "btnP1RealEstate";
             this.btnP1RealEstate.Size = new System.Drawing.Size(162, 192);
             this.btnP1RealEstate.TabIndex = 5;
@@ -121,9 +113,9 @@
             // btnP1Upgrade
             // 
             this.btnP1Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnP1Upgrade.Location = new System.Drawing.Point(632, 129);
+            this.btnP1Upgrade.Location = new System.Drawing.Point(241, 394);
             this.btnP1Upgrade.Name = "btnP1Upgrade";
-            this.btnP1Upgrade.Size = new System.Drawing.Size(129, 94);
+            this.btnP1Upgrade.Size = new System.Drawing.Size(221, 94);
             this.btnP1Upgrade.TabIndex = 3;
             this.btnP1Upgrade.Text = "Upgrade";
             this.btnP1Upgrade.UseVisualStyleBackColor = true;
@@ -132,7 +124,7 @@
             // 
             this.lbP1Properties.FormattingEnabled = true;
             this.lbP1Properties.ItemHeight = 24;
-            this.lbP1Properties.Location = new System.Drawing.Point(236, 28);
+            this.lbP1Properties.Location = new System.Drawing.Point(241, 494);
             this.lbP1Properties.Name = "lbP1Properties";
             this.lbP1Properties.Size = new System.Drawing.Size(389, 196);
             this.lbP1Properties.TabIndex = 2;
@@ -140,9 +132,9 @@
             // btnBuyP1
             // 
             this.btnBuyP1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuyP1.Location = new System.Drawing.Point(631, 28);
+            this.btnBuyP1.Location = new System.Drawing.Point(241, 294);
             this.btnBuyP1.Name = "btnBuyP1";
-            this.btnBuyP1.Size = new System.Drawing.Size(130, 94);
+            this.btnBuyP1.Size = new System.Drawing.Size(221, 94);
             this.btnBuyP1.TabIndex = 1;
             this.btnBuyP1.Text = "Buy";
             this.btnBuyP1.UseVisualStyleBackColor = true;
@@ -150,7 +142,7 @@
             // btnRollP1
             // 
             this.btnRollP1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRollP1.Location = new System.Drawing.Point(6, 28);
+            this.btnRollP1.Location = new System.Drawing.Point(11, 596);
             this.btnRollP1.Name = "btnRollP1";
             this.btnRollP1.Size = new System.Drawing.Size(224, 94);
             this.btnRollP1.TabIndex = 0;
@@ -158,126 +150,54 @@
             this.btnRollP1.UseVisualStyleBackColor = true;
             this.btnRollP1.Click += new System.EventHandler(this.btnRollP1_Click);
             // 
-            // gbUtilitiesP2
+            // toolStrip1
             // 
-            this.gbUtilitiesP2.Controls.Add(this.lblRentP2);
-            this.gbUtilitiesP2.Controls.Add(this.panel2);
-            this.gbUtilitiesP2.Controls.Add(this.lblNamePropertyP2);
-            this.gbUtilitiesP2.Controls.Add(this.btnP2profile);
-            this.gbUtilitiesP2.Controls.Add(this.btnP2RealEstate);
-            this.gbUtilitiesP2.Controls.Add(this.btnP2Upgrade);
-            this.gbUtilitiesP2.Controls.Add(this.btnBuyP2);
-            this.gbUtilitiesP2.Controls.Add(this.lbP2Properties);
-            this.gbUtilitiesP2.Controls.Add(this.btnRollP2);
-            this.gbUtilitiesP2.Location = new System.Drawing.Point(953, 1045);
-            this.gbUtilitiesP2.Name = "gbUtilitiesP2";
-            this.gbUtilitiesP2.Size = new System.Drawing.Size(931, 229);
-            this.gbUtilitiesP2.TabIndex = 1;
-            this.gbUtilitiesP2.TabStop = false;
-            this.gbUtilitiesP2.Text = "Utilities Player 2";
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsSave,
+            this.tsLoad});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1896, 35);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // lblRentP2
+            // tsSave
             // 
-            this.lblRentP2.AutoSize = true;
-            this.lblRentP2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblRentP2.Location = new System.Drawing.Point(810, 177);
-            this.lblRentP2.Name = "lblRentP2";
-            this.lblRentP2.Size = new System.Drawing.Size(34, 25);
-            this.lblRentP2.TabIndex = 8;
-            this.lblRentP2.Text = "$0";
+            this.tsSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsSave.Image = global::Monopoly.Properties.Resources.Save_16x;
+            this.tsSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsSave.Name = "tsSave";
+            this.tsSave.Size = new System.Drawing.Size(32, 32);
+            this.tsSave.Text = "toolStripButton1";
+            this.tsSave.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // panel2
+            // tsLoad
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(769, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 77);
-            this.panel2.TabIndex = 9;
+            this.tsLoad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsLoad.Image = global::Monopoly.Properties.Resources.OpenFile_16x;
+            this.tsLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsLoad.Name = "tsLoad";
+            this.tsLoad.Size = new System.Drawing.Size(32, 32);
+            this.tsLoad.Text = "toolStripButton2";
+            this.tsLoad.Click += new System.EventHandler(this.tsLoad_Click);
             // 
-            // label1
+            // btnP1profile
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "$0";
-            // 
-            // lblNamePropertyP2
-            // 
-            this.lblNamePropertyP2.AutoSize = true;
-            this.lblNamePropertyP2.Location = new System.Drawing.Point(784, 60);
-            this.lblNamePropertyP2.Name = "lblNamePropertyP2";
-            this.lblNamePropertyP2.Size = new System.Drawing.Size(34, 25);
-            this.lblNamePropertyP2.TabIndex = 9;
-            this.lblNamePropertyP2.Text = "$0";
-            // 
-            // btnP2profile
-            // 
-            this.btnP2profile.BackgroundImage = global::Monopoly.Properties.Resources.playing_tokensP2;
-            this.btnP2profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnP2profile.Location = new System.Drawing.Point(6, 129);
-            this.btnP2profile.Name = "btnP2profile";
-            this.btnP2profile.Size = new System.Drawing.Size(99, 100);
-            this.btnP2profile.TabIndex = 7;
-            this.btnP2profile.UseVisualStyleBackColor = true;
-            // 
-            // btnP2RealEstate
-            // 
-            this.btnP2RealEstate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnP2RealEstate.Location = new System.Drawing.Point(769, 24);
-            this.btnP2RealEstate.Name = "btnP2RealEstate";
-            this.btnP2RealEstate.Size = new System.Drawing.Size(162, 192);
-            this.btnP2RealEstate.TabIndex = 6;
-            this.btnP2RealEstate.UseVisualStyleBackColor = false;
-            // 
-            // btnP2Upgrade
-            // 
-            this.btnP2Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnP2Upgrade.Location = new System.Drawing.Point(632, 129);
-            this.btnP2Upgrade.Name = "btnP2Upgrade";
-            this.btnP2Upgrade.Size = new System.Drawing.Size(129, 92);
-            this.btnP2Upgrade.TabIndex = 5;
-            this.btnP2Upgrade.Text = "Upgrade";
-            this.btnP2Upgrade.UseVisualStyleBackColor = true;
-            // 
-            // btnBuyP2
-            // 
-            this.btnBuyP2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuyP2.Location = new System.Drawing.Point(632, 24);
-            this.btnBuyP2.Name = "btnBuyP2";
-            this.btnBuyP2.Size = new System.Drawing.Size(130, 97);
-            this.btnBuyP2.TabIndex = 3;
-            this.btnBuyP2.Text = "Buy";
-            this.btnBuyP2.UseVisualStyleBackColor = true;
-            // 
-            // lbP2Properties
-            // 
-            this.lbP2Properties.FormattingEnabled = true;
-            this.lbP2Properties.ItemHeight = 24;
-            this.lbP2Properties.Location = new System.Drawing.Point(236, 25);
-            this.lbP2Properties.Name = "lbP2Properties";
-            this.lbP2Properties.Size = new System.Drawing.Size(389, 196);
-            this.lbP2Properties.TabIndex = 4;
-            // 
-            // btnRollP2
-            // 
-            this.btnRollP2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRollP2.Location = new System.Drawing.Point(6, 28);
-            this.btnRollP2.Name = "btnRollP2";
-            this.btnRollP2.Size = new System.Drawing.Size(224, 94);
-            this.btnRollP2.TabIndex = 2;
-            this.btnRollP2.Text = "Roll";
-            this.btnRollP2.UseVisualStyleBackColor = true;
-            this.btnRollP2.Click += new System.EventHandler(this.btnRollP2_Click);
+            this.btnP1profile.BackgroundImage = global::Monopoly.Properties.Resources.playing_tokensP1;
+            this.btnP1profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnP1profile.Location = new System.Drawing.Point(11, 394);
+            this.btnP1profile.Name = "btnP1profile";
+            this.btnP1profile.Size = new System.Drawing.Size(224, 196);
+            this.btnP1profile.TabIndex = 6;
+            this.btnP1profile.UseVisualStyleBackColor = true;
             // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1896, 1336);
-            this.Controls.Add(this.gbUtilitiesP2);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gbUtilitiesP1);
             this.Name = "UI";
             this.Text = "UI";
@@ -285,11 +205,10 @@
             this.gbUtilitiesP1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.gbUtilitiesP2.ResumeLayout(false);
-            this.gbUtilitiesP2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -301,21 +220,14 @@
         private System.Windows.Forms.ListBox lbP1Properties;
         private System.Windows.Forms.Button btnBuyP1;
         private System.Windows.Forms.Button btnRollP1;
-        private System.Windows.Forms.GroupBox gbUtilitiesP2;
-        private System.Windows.Forms.Button btnP2RealEstate;
-        private System.Windows.Forms.Button btnP2Upgrade;
-        private System.Windows.Forms.Button btnBuyP2;
-        private System.Windows.Forms.ListBox lbP2Properties;
-        private System.Windows.Forms.Button btnRollP2;
         private System.Windows.Forms.Button btnP1profile;
-        private System.Windows.Forms.Button btnP2profile;
         private System.Windows.Forms.Label lblRentP1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNamePropertyP1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNamePropertyP2;
-        private System.Windows.Forms.Label lblRentP2;
+        private System.Windows.Forms.Label lblCash;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsSave;
+        private System.Windows.Forms.ToolStripButton tsLoad;
     }
 }
 

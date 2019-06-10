@@ -11,11 +11,13 @@ namespace Monopoly
 {
     public class FileHandeling
     {
-        Game Monopoly;
+        private Game Monopoly;
+        private IFormatter formatter;
 
         public FileHandeling(Game monopoly)
         {
             Monopoly = monopoly;
+            formatter = new BinaryFormatter();
         }
 
         public void Save()
@@ -28,7 +30,6 @@ namespace Monopoly
                     w.WriteLine(square.ToString());
                 }
             }
-            IFormatter formatter = new BinaryFormatter();
             using (Stream stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.txt", FileMode.Create))
             {
                 formatter.Serialize(stream, Monopoly.Gameboard);
@@ -37,7 +38,18 @@ namespace Monopoly
 
         public void Load()
         {
-
+            using (Stream stream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "SaveFile.txt", FileMode.Open))
+            {
+                if (formatter.Deserialize(stream) is GameBoard)
+                {
+                    stream.Position = 0;
+                    Monopoly.Gameboard = formatter.Deserialize(stream) as GameBoard;
+                }
+                else
+                {
+                    throw new IncorrectClassException("File is an invalid class");
+                }
+            }
         }
 
         public void Export()

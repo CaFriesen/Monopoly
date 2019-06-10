@@ -31,6 +31,7 @@ namespace Monopoly
                 players.Add(new Player());
             }
             fileHandler.Save();
+            fileHandler.Load();
         }
 
         public int Roll(int xPlayer)
