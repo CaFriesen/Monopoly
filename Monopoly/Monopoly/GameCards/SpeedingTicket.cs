@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.GameCards
+namespace Monopoly
 {
-    class SpeedingTicket : GameCard
+    public class SpeedingTicket : GameCard
     {
-        public SpeedingTicket(string name, string description) : base(name, description)
+        public int Ammount { get; private set; }
+        public SpeedingTicket(string name, string description, int ammount) : base(name, description)
         {
-
+            Ammount = ammount;
         }
 
         public override void CardAction(Player player)
         {
-
+            player.Cash -= Ammount;
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.GameCards
+namespace Monopoly
 {
-    class GetOutOfJail : GameCard
+    public class GetOutOfJail : GameCard
     {
         public GetOutOfJail(string name, string description) : base(name, description)
         {
