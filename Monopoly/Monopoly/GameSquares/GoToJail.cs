@@ -9,6 +9,13 @@ namespace Monopoly
     [Serializable]
     public class GoToJail: ActionSquare
     {
+        public override string Info
+        {
+            get
+            {
+                return "You get sent to jail!";
+            }
+        }
         public GoToJail(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
         }

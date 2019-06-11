@@ -9,6 +9,14 @@ namespace Monopoly
     [Serializable]
     public class Taxes: ActionSquare
     {
+        public override string Info
+        {
+            get
+            {
+                return "You pay 10% of your totalworth or 200$ if its lower";
+            }
+        }
+
         public Taxes(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
         }

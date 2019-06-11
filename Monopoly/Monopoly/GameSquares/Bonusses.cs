@@ -9,6 +9,13 @@ namespace Monopoly
     [Serializable]
     public class Bonusses: ActionSquare
     {
+        public override string Info
+        {
+            get
+            {
+                return "You recieve a bonus of " + bonusAmmount + "$";
+            }
+        }
         private int bonusAmmount;
         public Bonusses(int squareId, int bonus, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {

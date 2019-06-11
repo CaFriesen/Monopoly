@@ -9,6 +9,14 @@ namespace Monopoly
     [Serializable]
     public class Railroad: RealEstate
     {
+        public override string Info
+        {
+            get
+            {
+                return "Rent: " + Rent;
+            }
+        }
+
         private int baseRent;
 
         public int Rent

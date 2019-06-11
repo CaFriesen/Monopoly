@@ -10,6 +10,13 @@ namespace Monopoly
     public class Utility: RealEstate
     {
         private int baseRent;
+        public override string Info
+        {
+            get
+            {
+                return "Rent " + baseRent + " * lastroll";
+            }
+        }
 
         public Utility(int squareId, int rent, int price, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {

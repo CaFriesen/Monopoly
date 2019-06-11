@@ -9,6 +9,14 @@ namespace Monopoly
     [Serializable]
     class DrawCard: GameSquare
     {
+        public override string Info
+        {
+            get
+            {
+                return "You draw a random card!";
+            }
+        }
+
         private IReadOnlyList<GameCard> cards;
         private Random random;
 

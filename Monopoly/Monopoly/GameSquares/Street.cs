@@ -10,6 +10,14 @@ namespace Monopoly
     [Serializable]
     public class Street: RealEstate
     {
+        public override string Info
+        {
+            get
+            {
+                return "Rent: " + Rent + "\nHouse price: " + HousePrice + "\nLevel: " + Level;
+            }
+        }
+
         private int baseRent;
         public int HousePrice { get; private set; }
 
