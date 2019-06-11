@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public abstract class GameCard
     {
         public string Name { get; private set; }

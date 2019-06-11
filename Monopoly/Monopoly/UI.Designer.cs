@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.gbUtilitiesP1 = new System.Windows.Forms.GroupBox();
+            this.btnMortage = new System.Windows.Forms.Button();
             this.lblCash = new System.Windows.Forms.Label();
             this.lblRentP1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNamePropertyP1 = new System.Windows.Forms.Label();
+            this.btnP1profile = new System.Windows.Forms.Button();
             this.btnP1RealEstate = new System.Windows.Forms.Button();
             this.btnP1Upgrade = new System.Windows.Forms.Button();
             this.lbP1Properties = new System.Windows.Forms.ListBox();
@@ -41,7 +43,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
             this.tsLoad = new System.Windows.Forms.ToolStripButton();
-            this.btnP1profile = new System.Windows.Forms.Button();
             this.gbUtilitiesP1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // gbUtilitiesP1
             // 
+            this.gbUtilitiesP1.Controls.Add(this.btnMortage);
             this.gbUtilitiesP1.Controls.Add(this.lblCash);
             this.gbUtilitiesP1.Controls.Add(this.lblRentP1);
             this.gbUtilitiesP1.Controls.Add(this.panel1);
@@ -64,6 +66,17 @@
             this.gbUtilitiesP1.TabIndex = 0;
             this.gbUtilitiesP1.TabStop = false;
             this.gbUtilitiesP1.Text = "Utilities Player 1";
+            // 
+            // btnMortage
+            // 
+            this.btnMortage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMortage.Location = new System.Drawing.Point(241, 194);
+            this.btnMortage.Name = "btnMortage";
+            this.btnMortage.Size = new System.Drawing.Size(169, 94);
+            this.btnMortage.TabIndex = 9;
+            this.btnMortage.Text = "Mortage";
+            this.btnMortage.UseVisualStyleBackColor = true;
+            this.btnMortage.Click += new System.EventHandler(this.btnMortage_Click);
             // 
             // lblCash
             // 
@@ -87,26 +100,36 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Controls.Add(this.lblNamePropertyP1);
-            this.panel1.Location = new System.Drawing.Point(468, 235);
+            this.panel1.Location = new System.Drawing.Point(416, 194);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 77);
+            this.panel1.Size = new System.Drawing.Size(214, 111);
             this.panel1.TabIndex = 2;
             // 
             // lblNamePropertyP1
             // 
             this.lblNamePropertyP1.AutoSize = true;
-            this.lblNamePropertyP1.Location = new System.Drawing.Point(11, 26);
+            this.lblNamePropertyP1.Location = new System.Drawing.Point(12, 28);
             this.lblNamePropertyP1.Name = "lblNamePropertyP1";
             this.lblNamePropertyP1.Size = new System.Drawing.Size(34, 25);
             this.lblNamePropertyP1.TabIndex = 8;
             this.lblNamePropertyP1.Text = "$0";
             // 
+            // btnP1profile
+            // 
+            this.btnP1profile.BackgroundImage = global::Monopoly.Properties.Resources.playing_tokensP1;
+            this.btnP1profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnP1profile.Location = new System.Drawing.Point(11, 394);
+            this.btnP1profile.Name = "btnP1profile";
+            this.btnP1profile.Size = new System.Drawing.Size(224, 196);
+            this.btnP1profile.TabIndex = 6;
+            this.btnP1profile.UseVisualStyleBackColor = true;
+            // 
             // btnP1RealEstate
             // 
             this.btnP1RealEstate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnP1RealEstate.Location = new System.Drawing.Point(468, 294);
+            this.btnP1RealEstate.Location = new System.Drawing.Point(416, 294);
             this.btnP1RealEstate.Name = "btnP1RealEstate";
-            this.btnP1RealEstate.Size = new System.Drawing.Size(162, 192);
+            this.btnP1RealEstate.Size = new System.Drawing.Size(214, 192);
             this.btnP1RealEstate.TabIndex = 5;
             this.btnP1RealEstate.UseVisualStyleBackColor = false;
             // 
@@ -115,7 +138,7 @@
             this.btnP1Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnP1Upgrade.Location = new System.Drawing.Point(241, 394);
             this.btnP1Upgrade.Name = "btnP1Upgrade";
-            this.btnP1Upgrade.Size = new System.Drawing.Size(221, 94);
+            this.btnP1Upgrade.Size = new System.Drawing.Size(169, 94);
             this.btnP1Upgrade.TabIndex = 3;
             this.btnP1Upgrade.Text = "Upgrade";
             this.btnP1Upgrade.UseVisualStyleBackColor = true;
@@ -134,10 +157,11 @@
             this.btnBuyP1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuyP1.Location = new System.Drawing.Point(241, 294);
             this.btnBuyP1.Name = "btnBuyP1";
-            this.btnBuyP1.Size = new System.Drawing.Size(221, 94);
+            this.btnBuyP1.Size = new System.Drawing.Size(169, 94);
             this.btnBuyP1.TabIndex = 1;
             this.btnBuyP1.Text = "Buy";
             this.btnBuyP1.UseVisualStyleBackColor = true;
+            this.btnBuyP1.Click += new System.EventHandler(this.btnBuyP1_Click);
             // 
             // btnRollP1
             // 
@@ -182,16 +206,6 @@
             this.tsLoad.Text = "toolStripButton2";
             this.tsLoad.Click += new System.EventHandler(this.tsLoad_Click);
             // 
-            // btnP1profile
-            // 
-            this.btnP1profile.BackgroundImage = global::Monopoly.Properties.Resources.playing_tokensP1;
-            this.btnP1profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnP1profile.Location = new System.Drawing.Point(11, 394);
-            this.btnP1profile.Name = "btnP1profile";
-            this.btnP1profile.Size = new System.Drawing.Size(224, 196);
-            this.btnP1profile.TabIndex = 6;
-            this.btnP1profile.UseVisualStyleBackColor = true;
-            // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -228,6 +242,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsSave;
         private System.Windows.Forms.ToolStripButton tsLoad;
+        private System.Windows.Forms.Button btnMortage;
     }
 }
 

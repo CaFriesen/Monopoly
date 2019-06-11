@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public class GoToStart : GameCard
     {
         public GoToStart(string name, string description) : base(name, description)

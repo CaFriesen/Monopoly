@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CannotBeZeroException.cs" />
+    <Compile Include="Exceptions\CannotBeZeroException.cs" />
+    <Compile Include="Exceptions\NotRealEstateException.cs" />
     <Compile Include="GameCards\SpeedingTicket.cs" />
     <Compile Include="GameCards\GameCard.cs" />
     <Compile Include="GameCards\GetOutOfJail.cs" />
@@ -63,10 +64,11 @@
     <Compile Include="GameSquares\GoToJail.cs" />
     <Compile Include="GameSquares\Jail.cs" />
     <Compile Include="GameSquares\Normal.cs" />
+    <Compile Include="Exceptions\OffTheBoardException.cs" />
     <Compile Include="GameSquares\Parking.cs" />
     <Compile Include="GameSquares\SquareColor.cs" />
     <Compile Include="GameSquares\Start.cs" />
-    <Compile Include="IncorrectClassException.cs" />
+    <Compile Include="Exceptions\IncorrectClassException.cs" />
     <Compile Include="UI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,7 +87,7 @@
     <Compile Include="GameSquares\Street.cs" />
     <Compile Include="GameSquares\Taxes.cs" />
     <Compile Include="GameSquares\Utility.cs" />
-    <Compile Include="RollIsToBigException.cs" />
+    <Compile Include="Exceptions\RollIsToBigException.cs" />
     <EmbeddedResource Include="UI.resx">
       <DependentUpon>UI.cs</DependentUpon>
     </EmbeddedResource>

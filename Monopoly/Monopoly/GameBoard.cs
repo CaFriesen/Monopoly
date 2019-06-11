@@ -59,12 +59,12 @@ namespace Monopoly
             squares.Add(new Street(11, 140, 100, 50, "Pall mall", 200, 50, 200));
             squares.Add(new Utility(12, 75, 150, "Electric company", 250, 250, 30));
             squares.Add(new Street(13, 140, 100, 50, "Whitehall", 200, 50, 200));
-            squares.Add(new Street(14, 160, 100, 50, "Marylebone station", 200, 50, 200));
-            squares.Add(new Railroad(19, 200, 50, "Marylebone station", 100, 100, 100));
-            squares.Add(new Street(15, 180, 200, 50, "Bow street", 250, 170, 0));
-            squares.Add(new DrawCard(16, "Draw card", 0, 0, 100, cards.AsReadOnly(), random));
-            squares.Add(new Street(17, 180, 200, 50, "Marlborough street", 250, 170, 0));
-            squares.Add(new Street(18, 200, 200, 50, "Vine street", 250, 170, 0));
+            squares.Add(new Street(14, 160, 100, 50, "Northumrl'd avenue", 200, 50, 200));
+            squares.Add(new Railroad(15, 200, 50, "Marylebone station", 100, 100, 100));
+            squares.Add(new Street(16, 180, 200, 50, "Bow street", 250, 170, 0));
+            squares.Add(new DrawCard(17, "Draw card", 0, 0, 100, cards.AsReadOnly(), random));
+            squares.Add(new Street(18, 180, 200, 50, "Marlborough street", 250, 170, 0));
+            squares.Add(new Street(19, 200, 200, 50, "Vine street", 250, 170, 0));
 
             squares.Add(new Parking(20, "Parking", 0, 0, 0));
             squares.Add(new Street(21, 220, 400, 50, "Strand", 255, 0, 0));

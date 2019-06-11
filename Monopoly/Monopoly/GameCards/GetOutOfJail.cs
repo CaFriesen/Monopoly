@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    [Serializable]
     public class GetOutOfJail : GameCard
     {
         public GetOutOfJail(string name, string description) : base(name, description)

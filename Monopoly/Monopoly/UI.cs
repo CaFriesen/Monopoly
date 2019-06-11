@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Monopoly
 {
@@ -16,7 +17,6 @@ namespace Monopoly
         private Game game;
         private List<Button> players;
         private List<Bitmap> profilePics;
-        private int player;
 
         public UI()
         {
@@ -24,7 +24,7 @@ namespace Monopoly
             players = new List<Button>();
             profilePics = new List<Bitmap>();
 
-            player = 0;
+            game.player = 0;
             
             InitializeComponent();
             
@@ -72,7 +72,7 @@ namespace Monopoly
                 {
                     property.Text = square.Name;
                 }
-                property.Click += (o, d) => { MessageBox.Show(square.Info); };
+                property.Click += (o, d) => { MessageBox.Show(square.Name + "\n" + square.Info); };
                 this.Controls.Add(property);
 
                 Label level = new Label();
@@ -144,12 +144,31 @@ namespace Monopoly
             }
             return loc;
         }
+        
+        private void btnRollP1_Click(object sender, EventArgs e)
+        {
+            Roll();
+            GameSquare square = game.GetGameSquare(game.Players[game.player].Position);
+            Buyable(square, game.player);
+
+            panel1.BackColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
+            lblNamePropertyP1.Text = square.Name;
+            if (square is RealEstate)
+            {
+                lblRentP1.Text =  (square as RealEstate).Price.ToString("C", CultureInfo.CurrentCulture);
+            }
+            else
+            {
+                lblRentP1.Text = "";
+            }
+        }
 
         private void Buyable(GameSquare square, int player)
         {
             if (square is RealEstate)
             {
                 btnBuyP1.Enabled = true;
+                btnP1Upgrade.Enabled = false;
 
                 if (square is Street)
                 {
@@ -157,7 +176,7 @@ namespace Monopoly
                     {
                         if (square == estate)
                         {
-
+                            btnP1Upgrade.Enabled = true;
                         }
                     }
                 }
@@ -165,31 +184,19 @@ namespace Monopoly
             else
             {
                 btnBuyP1.Enabled = false;
+                btnP1Upgrade.Enabled = false;
             }
-        }
-
-        private void btnRollP1_Click(object sender, EventArgs e)
-        {
-            Roll();
-            Buyable(game.GetGameSquare(game.Players[0].Position), player);
-            game.GetGameSquare(game.Players[0].Position).Action(game.Players[player]);
         }
 
         private void Roll()
         {
-            if (player == 0)
-            {
-                player = 1;
-            }
-            else
-            {
-                player = 0;
-            }
-            game.Roll(player);
-            players[player].Location = GetBoardLocation(game.Players[player].Position, game.Gameboard.BoardSideLength, 12 + player * 12, 28);
-            btnP1profile.Image = profilePics[player];
+            game.Roll(game.player);
+
+
+            players[game.player].Location = GetBoardLocation(game.Players[game.player].Position, game.Gameboard.BoardSideLength, 12 + game.player * 12, 28);
+            btnP1profile.Image = profilePics[game.player];
             btnP1profile.BackgroundImageLayout = ImageLayout.Stretch;
-            lblCash.Text = "Cash: " + Convert.ToString(game.Players[player].Cash);
+            lblCash.Text = "Cash: " + Convert.ToString(game.Players[game.player].Cash);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -200,6 +207,19 @@ namespace Monopoly
         private void tsLoad_Click(object sender, EventArgs e)
         {
             game.fileHandler.Load();
+        }
+
+        private void btnMortage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuyP1_Click(object sender, EventArgs e)
+        {
+            if (game.Buy())
+            {
+                //lbP1Properties.Items.Add(game.GetGameSquare(players[game.player].))
+            }
         }
     }
 }
