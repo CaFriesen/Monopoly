@@ -10,6 +10,7 @@ namespace Monopoly
     public class GameBoard
     {
         private List<GameSquare> squares;
+        private List<GameCard> cards;
 
         public IReadOnlyList<GameSquare> Squares
         {

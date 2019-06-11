@@ -10,6 +10,8 @@ namespace Monopoly
     public class Player
     {
         private int position;
+        private List<RealEstate> realEstates;
+
         public int Position
         {
             get { return position; }
@@ -39,17 +41,10 @@ namespace Monopoly
         public int Cash { get; set; }
         public bool Jailed { get; set; }
         public int LastRoll { get; set; }
-
-        private List<RealEstate> realEstates;
-
+        public bool HasGetOutOfJailCard { get; set; }
         public IReadOnlyList<RealEstate> RealEstates
         {
             get { return realEstates.AsReadOnly(); }
-        }
-
-        public Player(int startPosistion)
-        {
-            Position = startPosistion;
         }
 
         public Player()

@@ -51,7 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CannotBeZeroException.cs" />
+    <Compile Include="GameCards\SpeedingTicket.cs" />
     <Compile Include="GameCards\GameCard.cs" />
+    <Compile Include="GameCards\GetOutOfJail.cs" />
+    <Compile Include="GameCards\GoToStart.cs" />
+    <Compile Include="GameCards\Lottery.cs" />
     <Compile Include="GameSquares\ActionSquare.cs" />
     <Compile Include="GameSquares\Bonusses.cs" />
     <Compile Include="FileHandeling.cs" />

@@ -9,11 +9,10 @@ namespace Monopoly.GameSquares
     [Serializable]
     class DrawCard: GameSquare
     {
-        private int cardType;
 
-        public DrawCard(int squareId, int cardType, string name, int r, int g, int b) : base(squareId, name, r, g, b)
+        public DrawCard(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
         {
-            this.cardType = cardType;
+
         }
 
         public override void Action(Player player)
