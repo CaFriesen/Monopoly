@@ -15,15 +15,17 @@ namespace Monopoly
 
         private Game game;
         private List<Button> players;
+        private List<Bitmap> profilePics;
         private int player;
 
         public UI()
         {
             game = new Game();
             players = new List<Button>();
+            profilePics = new List<Bitmap>();
+
             player = 0;
-
-
+            
             InitializeComponent();
             
             AddGameSquares();
@@ -37,12 +39,14 @@ namespace Monopoly
             players[0].Size = new Size(12, 12);
             players[0].BackColor = Color.Blue;
             players[0].Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 12, 28);
+            profilePics.Add(Properties.Resources.playing_tokensP1);
             
             players.Add(new Button());
             players[1].Size = new Size(12, 12);
             players[1].BackColor = Color.Red;
             players[1].Location = GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 28);
-            
+            profilePics.Add(Properties.Resources.playing_tokensP2);
+
             this.Controls.Add(players[0]);
             players[0].BringToFront();
 
@@ -119,7 +123,7 @@ namespace Monopoly
             Point loc = new Point();
             switch (orderNumber / boardSideLength)
             {
-                case (3)://getallen boven 40 afstraffen
+                case (3):
                     loc.X = 0 + offsetX;
                     loc.Y = ((boardSideLength * 50) + 12) - (orderNumber - (boardSideLength * 3)) * 50 + offsetY;
                     break;
@@ -183,6 +187,9 @@ namespace Monopoly
             }
             game.Roll(player);
             players[player].Location = GetBoardLocation(game.Players[player].Position, game.Gameboard.BoardSideLength, 12 + player * 12, 28);
+            btnP1profile.Image = profilePics[player];
+            btnP1profile.BackgroundImageLayout = ImageLayout.Stretch;
+            lblCash.Text = "Cash: " + Convert.ToString(game.Players[player].Cash);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
