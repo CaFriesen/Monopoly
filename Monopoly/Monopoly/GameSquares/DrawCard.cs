@@ -4,20 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.GameSquares
+namespace Monopoly
 {
     [Serializable]
     class DrawCard: GameSquare
     {
+        private IReadOnlyList<GameCard> cards;
+        private Random random;
 
-        public DrawCard(int squareId, string name, int r, int g, int b) : base(squareId, name, r, g, b)
+        public DrawCard(int squareId, string name, int r, int g, int b, IReadOnlyList<GameCard> cards, Random random) : base(squareId, name, r, g, b)
         {
-
+            this.cards = cards;
+            this.random = random;
         }
 
         public override void Action(Player player)
         {
-            //Draw card based on cardType and give it to player
+            cards[random.Next(0, cards.Count)].CardAction(player);
         }
     }
 }
