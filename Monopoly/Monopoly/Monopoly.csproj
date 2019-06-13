@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardLocationManager.cs" />
     <Compile Include="Exceptions\CannotBeZeroException.cs" />
     <Compile Include="Exceptions\NotRealEstateException.cs" />
     <Compile Include="GameCards\SpeedingTicket.cs" />

@@ -12,7 +12,6 @@ namespace Monopoly
     {
         private int position;
         private List<RealEstate> realEstates;
-
         public int Position
         {
             get { return position; }
@@ -24,6 +23,7 @@ namespace Monopoly
                 {
                     position = newPosition - 40;
                     Cash += 200;
+                    LastRoll = value;
                 }
                 else
                 {
@@ -33,6 +33,7 @@ namespace Monopoly
                     }
                     else
                     {
+                        LastRoll = value;
                         position = newPosition;
                     }
                 }

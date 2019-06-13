@@ -17,11 +17,11 @@ namespace MonopolyTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(OffTheBoardException))]
         public void GameTest_GetGameSqaure_OutsideBoard()
         {
             Game game = new Game();
             GameSquare square = game.GetGameSquare(50);
-            //Assert.ThrowsException<>
         }
     }
 }

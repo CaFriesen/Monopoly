@@ -35,19 +35,19 @@ namespace Monopoly
             fileHandler.Load();
         }
 
-        public bool Buy()
+        public void Buy()
         {
             if (GetGameSquare(Players[player].Position) is RealEstate)
             {
-                Players[player].AddRealEstate(GetGameSquare(Players[player].Position) as RealEstate);
-                return true;
+                (GetGameSquare(Players[player].Position) as RealEstate).Buy(Players[player]);                
             }
             else
             {
                 throw new NotRealEstateException("This square cannot be bought");
             }
         }
-        public int Roll(int xPlayer)
+
+        public void Roll()
         {
             if (player == 0)
             {
@@ -57,8 +57,23 @@ namespace Monopoly
             {
                 player = 0;
             }
-            players[xPlayer].Position = random.Next(1, 7) + random.Next(1, 7);
-            return players[xPlayer].Position;
+
+            int roll = random.Next(1, 7) + random.Next(1, 7);
+
+            if (Players[player].Jailed)
+            {
+                if((Players[player].LastRoll & 1) == 1 || Players[player].HasGetOutOfJailCard)
+                {
+                    Players[player].Jailed = false;
+                    Players[player].HasGetOutOfJailCard = false;
+                }
+            }
+            else
+            {
+                players[player].Position = roll;
+            }
+            GetGameSquare(Players[player].Position).Action(Players[player]);
+            
         }
 
         public void Mortage()

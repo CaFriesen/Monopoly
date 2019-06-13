@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.GameSquares
+namespace Monopoly
 {
-    class OffTheBoardException : Exception
+    public class OffTheBoardException : Exception
     {
         public OffTheBoardException(string message) : base(message)
         {
