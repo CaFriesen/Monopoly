@@ -11,6 +11,7 @@ namespace Monopoly
     {
         private List<GameSquare> squares;
         private List<GameCard> cards;
+        public int JailLocation;
 
         public IReadOnlyList<GameSquare> Squares
         {
@@ -25,9 +26,20 @@ namespace Monopoly
             cards = new List<GameCard>();
             BoardSideLength = boardSideLength;
             initCards();
-            initMonopolyBoard();
+            //initMonopolyBoard();
+            
         }
 
+        private void SetJail()
+        {
+            foreach (GameSquare square in squares)
+            {
+                if (square is Jail)
+                {
+                    JailLocation = square.SquareId;
+                }
+            }
+        }
         private void initCards()
         {
             cards.Add(new Lottery("Small lottery win", "You win a small ammount of money!", 500));

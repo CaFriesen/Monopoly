@@ -31,8 +31,6 @@ namespace Monopoly
             {
                 players.Add(new Player());
             }
-            fileHandler.Save();
-            fileHandler.Load();
         }
 
         public void Buy()
@@ -62,11 +60,7 @@ namespace Monopoly
 
             if (Players[player].Jailed)
             {
-                if((Players[player].LastRoll & 1) == 1 || Players[player].HasGetOutOfJailCard)
-                {
-                    Players[player].Jailed = false;
-                    Players[player].HasGetOutOfJailCard = false;
-                }
+                Jailed();
             }
             else
             {
@@ -74,6 +68,20 @@ namespace Monopoly
             }
             GetGameSquare(Players[player].Position).Action(Players[player]);
             
+        }
+
+        private void Jailed()
+        {
+            if (Players[player].Position != Gameboard.JailLocation)
+            {
+                Players[player].Position = Gameboard.BoardSideLength * 4 - Players[player].Position + Gameboard.JailLocation;
+            }
+            if ((Players[player].LastRoll % 2 == 0 || Players[player].HasGetOutOfJailCard))
+            {
+                Players[player].Jailed = false;
+                Players[player].HasGetOutOfJailCard = false;
+                Players[player].Position = Players[player].LastRoll;
+            }
         }
 
         public void Mortage()

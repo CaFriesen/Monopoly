@@ -34,5 +34,10 @@ namespace Monopoly
                 Available = false;
             }
         }
+
+        public override string ToString()
+        {
+            return base.Name;
+        }
     }
 }

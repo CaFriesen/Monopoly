@@ -11,7 +11,7 @@ namespace MonopolyTests
         {
             Game game = new Game();
             int previousPosistion = game.Players[1].Position;
-            game.Roll(1);
+            game.Roll();
             Assert.AreNotEqual(previousPosistion, game.Players[1].Position);
             Assert.IsTrue(previousPosistion < game.Players[1].Position);
         }

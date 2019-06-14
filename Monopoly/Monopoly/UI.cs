@@ -138,8 +138,8 @@ namespace Monopoly
             btnP1profile.Image = profilePics[game.player];
             btnP1profile.BackgroundImageLayout = ImageLayout.Stretch;
             lblCash.Text = "Cash: " + Convert.ToString(game.Players[game.player].Cash);
+            lbP1Properties.DataSource = null;
             lbP1Properties.DataSource = game.Players[game.player].RealEstates;
-            lbP1Properties.Refresh();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -149,7 +149,9 @@ namespace Monopoly
 
         private void tsLoad_Click(object sender, EventArgs e)
         {
+
             game.fileHandler.Load();
+            AddGameSquares();
         }
 
         private void btnMortage_Click(object sender, EventArgs e)
@@ -169,7 +171,8 @@ namespace Monopoly
             }
             finally
             {
-                lbP1Properties.Refresh();
+                lbP1Properties.DataSource = null;
+                lbP1Properties.DataSource = game.Players[game.player].RealEstates;
             }
         }
     }
