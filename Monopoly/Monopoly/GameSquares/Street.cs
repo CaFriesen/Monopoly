@@ -18,7 +18,6 @@ namespace Monopoly
             }
         }
 
-        private int baseRent;
         public int HousePrice { get; private set; }
 
         public int Rent
@@ -36,6 +35,8 @@ namespace Monopoly
             }
         }
         public int Level { get; private set; }
+        
+        private int baseRent;
 
         public Street(int squareId, int price, int rent, int housePrice, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
