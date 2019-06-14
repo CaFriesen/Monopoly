@@ -65,7 +65,7 @@
             this.gbUtilitiesP1.Size = new System.Drawing.Size(643, 696);
             this.gbUtilitiesP1.TabIndex = 0;
             this.gbUtilitiesP1.TabStop = false;
-            this.gbUtilitiesP1.Text = "Utilities Player 1";
+            this.gbUtilitiesP1.Text = "Utilities PlayerTurn 1";
             // 
             // btnMortage
             // 
@@ -132,16 +132,6 @@
             this.btnP1RealEstate.Size = new System.Drawing.Size(214, 192);
             this.btnP1RealEstate.TabIndex = 5;
             this.btnP1RealEstate.UseVisualStyleBackColor = false;
-            // 
-            // btnP1Upgrade
-            // 
-            this.btnP1Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnP1Upgrade.Location = new System.Drawing.Point(241, 394);
-            this.btnP1Upgrade.Name = "btnP1Upgrade";
-            this.btnP1Upgrade.Size = new System.Drawing.Size(169, 94);
-            this.btnP1Upgrade.TabIndex = 3;
-            this.btnP1Upgrade.Text = "Upgrade";
-            this.btnP1Upgrade.UseVisualStyleBackColor = true;
             // 
             // lbP1Properties
             // 

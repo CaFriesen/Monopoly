@@ -24,7 +24,7 @@ namespace Monopoly
         {
             using (Stream stream = new FileStream(fileName, FileMode.Create))
             {
-                formatter.Serialize(stream, Monopoly.Gameboard);
+                formatter.Serialize(stream, Monopoly.Board);
             }
         }
 
@@ -35,7 +35,7 @@ namespace Monopoly
                 if (formatter.Deserialize(stream) is GameBoard)
                 {
                     stream.Position = 0;
-                    Monopoly.Gameboard = formatter.Deserialize(stream) as GameBoard;
+                    Monopoly.Board = formatter.Deserialize(stream) as GameBoard;
                 }
                 else
                 {

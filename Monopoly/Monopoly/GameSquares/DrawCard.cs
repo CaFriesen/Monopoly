@@ -13,7 +13,7 @@ namespace Monopoly
         {
             get
             {
-                return "You draw a random card!";
+                return "You draw a Rand card!";
             }
         }
 

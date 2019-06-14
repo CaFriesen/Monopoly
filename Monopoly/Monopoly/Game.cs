@@ -8,11 +8,11 @@ namespace Monopoly
 {
     public class Game
     {
-        public GameBoard Gameboard;
-        public FileHandeling fileHandler;
-        private Random random;
+        public GameBoard Board;
+        public FileHandeling FileHandler;
+        private Random Rand;
         private List<Player> players;
-        public int player = 0;
+        public int PlayerTurn { get; set; }
 
 
         public IReadOnlyList<Player> Players
@@ -23,10 +23,11 @@ namespace Monopoly
 
         public Game()
         {
-            Gameboard = new GameBoard(10);
-            fileHandler = new FileHandeling(this);
+            Board = new GameBoard(10);
+            FileHandler = new FileHandeling(this);
             players = new List<Player>();
-            random = new Random();
+            Rand = new Random();
+            PlayerTurn = 0;
             for (int i = 0; i < 2; i++)
             {
                 players.Add(new Player());
@@ -35,9 +36,9 @@ namespace Monopoly
 
         public void Buy()
         {
-            if (GetGameSquare(Players[player].Position) is RealEstate)
+            if (GetGameSquare(Players[PlayerTurn].Position) is RealEstate)
             {
-                (GetGameSquare(Players[player].Position) as RealEstate).Buy(Players[player]);                
+                (GetGameSquare(Players[PlayerTurn].Position) as RealEstate).Buy(Players[PlayerTurn]);                
             }
             else
             {
@@ -47,40 +48,40 @@ namespace Monopoly
 
         public void Roll()
         {
-            if (player == 0)
+            if (PlayerTurn == 0)
             {
-                player = 1;
+                PlayerTurn = 1;
             }
             else
             {
-                player = 0;
+                PlayerTurn = 0;
             }
 
-            int roll = random.Next(1, 7) + random.Next(1, 7);
+            int roll = Rand.Next(1, 7) + Rand.Next(1, 7);
 
-            if (Players[player].Jailed)
+            if (Players[PlayerTurn].Jailed)
             {
                 Jailed();
             }
             else
             {
-                players[player].Position = roll;
+                players[PlayerTurn].Position = roll;
             }
-            GetGameSquare(Players[player].Position).Action(Players[player]);
+            GetGameSquare(Players[PlayerTurn].Position).Action(Players[PlayerTurn]);
             
         }
 
         private void Jailed()
         {
-            if (Players[player].Position != Gameboard.JailLocation)
+            if (Players[PlayerTurn].Position != Board.JailLocation)
             {
-                Players[player].Position = Gameboard.BoardSideLength * 4 - Players[player].Position + Gameboard.JailLocation;
+                Players[PlayerTurn].Position = Board.BoardSideLength * 4 - Players[PlayerTurn].Position + Board.JailLocation;
             }
-            if ((Players[player].LastRoll % 2 == 0 || Players[player].HasGetOutOfJailCard))
+            if ((Players[PlayerTurn].LastRoll % 2 == 0 || Players[PlayerTurn].HasGetOutOfJailCard))
             {
-                Players[player].Jailed = false;
-                Players[player].HasGetOutOfJailCard = false;
-                Players[player].Position = Players[player].LastRoll;
+                Players[PlayerTurn].Jailed = false;
+                Players[PlayerTurn].HasGetOutOfJailCard = false;
+                Players[PlayerTurn].Position = Players[PlayerTurn].LastRoll;
             }
         }
 
@@ -96,7 +97,7 @@ namespace Monopoly
 
         public GameSquare GetGameSquare(int squareID)
         {
-            foreach (GameSquare square in Gameboard.Squares)
+            foreach (GameSquare square in Board.Squares)
             {
                 if (square.SquareId == squareID)
                 {

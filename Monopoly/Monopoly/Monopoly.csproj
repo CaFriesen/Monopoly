@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="BoardLocationManager.cs" />
     <Compile Include="Exceptions\CannotBeZeroException.cs" />
+    <Compile Include="Exceptions\NotAStreetException.cs" />
     <Compile Include="Exceptions\NotRealEstateException.cs" />
     <Compile Include="GameCards\SpeedingTicket.cs" />
     <Compile Include="GameCards\GameCard.cs" />

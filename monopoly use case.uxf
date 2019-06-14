@@ -7,7 +7,7 @@
       <x>680</x>
       <y>780</y>
       <w>230</w>
-      <h>340</h>
+      <h>420</h>
     </coordinates>
     <panel_attributes>--
 Monopoly</panel_attributes>
@@ -56,14 +56,15 @@ kopen</panel_attributes>
       <w>120</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>gebouwen kopen</panel_attributes>
+    <panel_attributes>In de cel gezet 
+worden</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
       <x>710</x>
-      <y>1030</y>
+      <y>1100</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -77,10 +78,10 @@ hypotheekiezeren</panel_attributes>
       <x>560</x>
       <y>950</y>
       <w>170</w>
-      <h>130</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;150.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;150.0;180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -114,5 +115,28 @@ hypotheekiezeren</panel_attributes>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;50.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>730</x>
+      <y>1030</y>
+      <w>120</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>uit de cel
+dobbelen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>950</y>
+      <w>190</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;170.0;110.0</additional_attributes>
   </element>
 </diagram>

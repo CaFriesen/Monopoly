@@ -12,7 +12,7 @@ namespace MonopolyTests
         {
             //hey freddy we weten niet goed waarom deze faalt maar we willen wel aantonen dat we met unit testen ook externe bestanden kunnen gebruiken in onze unittests
             Game game = new Game();
-            game.fileHandler.Load(@"../../../TestFiles/Gameboard.dat");
+            game.FileHandler.Load(@"../../../TestFiles/Board.dat");
             int previousPosistion = game.Players[1].Position;
             game.Roll();
             Assert.AreNotEqual(previousPosistion, game.Players[1].Position);

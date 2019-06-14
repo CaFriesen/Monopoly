@@ -26,7 +26,7 @@ namespace Monopoly
             players = new List<Button>();
             profilePics = new List<Bitmap>();
 
-            game.player = 0;
+            game.PlayerTurn = 0;
             
             InitializeComponent();
             
@@ -41,13 +41,13 @@ namespace Monopoly
             players.Add(new Button());
             players[0].Size = new Size(12, 12);
             players[0].BackColor = Color.Blue;
-            players[0].Location = BoardLocationManager.GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 12, 28);
+            players[0].Location = BoardLocationManager.GetBoardLocation(game.Players[0].Position, game.Board.BoardSideLength, 12, 28);
             profilePics.Add(Properties.Resources.playing_tokensP1);
             
             players.Add(new Button());
             players[1].Size = new Size(12, 12);
             players[1].BackColor = Color.Red;
-            players[1].Location = BoardLocationManager.GetBoardLocation(game.Players[0].Position, game.Gameboard.BoardSideLength, 24, 28);
+            players[1].Location = BoardLocationManager.GetBoardLocation(game.Players[0].Position, game.Board.BoardSideLength, 24, 28);
             profilePics.Add(Properties.Resources.playing_tokensP2);
 
             this.Controls.Add(players[0]);
@@ -61,10 +61,10 @@ namespace Monopoly
 
         private void AddGameSquares()
         {
-          foreach(GameSquare square in game.Gameboard.Squares)
+          foreach(GameSquare square in game.Board.Squares)
             {
                 Button property = new Button();
-                property.Location = BoardLocationManager.GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength, 0, 28);
+                property.Location = BoardLocationManager.GetBoardLocation(square.SquareId, game.Board.BoardSideLength, 0, 28);
                 property.BackColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
                 property.Size = new Size(50, 50);
                 if (square is RealEstate)
@@ -77,22 +77,26 @@ namespace Monopoly
                 }
                 property.Click += (o, d) => { MessageBox.Show(square.Name + "\n" + square.Info); };
                 this.Controls.Add(property);
-
-                Label level = new Label();
-                level.Size = new Size(12, 12);
-                level.Location = BoardLocationManager.GetBoardLocation(square.SquareId, game.Gameboard.BoardSideLength, 0, 28);
-                level.Text = "5";
-                level.BackColor = Color.Transparent;
-                this.Controls.Add(level);
-                level.BringToFront();
+                property.Tag = -1;
+                if (square is Street)
+                {
+                    Label level = new Label();
+                    level.Size = new Size(12, 12);
+                    level.Location = BoardLocationManager.GetBoardLocation(square.SquareId, game.Board.BoardSideLength, 0, 28);
+                    level.Text = (square as Street).Level.ToString();
+                    level.BackColor = Color.Transparent;
+                    this.Controls.Add(level);
+                    level.BringToFront();
+                    level.Tag = square.SquareId;
+                }
             }  
         }
         
         private void btnRollP1_Click(object sender, EventArgs e)
         {
             Roll();
-            GameSquare square = game.GetGameSquare(game.Players[game.player].Position);
-            Buyable(square, game.player);
+            GameSquare square = game.GetGameSquare(game.Players[game.PlayerTurn].Position);
+            Buyable(square, game.PlayerTurn);
 
             panel1.BackColor = Color.FromArgb(square.Color.R, square.Color.G, square.Color.B);
             lblNamePropertyP1.Text = square.Name;
@@ -139,12 +143,12 @@ namespace Monopoly
             game.Roll();
 
 
-            players[game.player].Location = BoardLocationManager.GetBoardLocation(game.Players[game.player].Position, game.Gameboard.BoardSideLength, 12 + game.player * 12, 28);
-            btnP1profile.Image = profilePics[game.player];
+            players[game.PlayerTurn].Location = BoardLocationManager.GetBoardLocation(game.Players[game.PlayerTurn].Position, game.Board.BoardSideLength, 12 + game.PlayerTurn * 12, 28);
+            btnP1profile.Image = profilePics[game.PlayerTurn];
             btnP1profile.BackgroundImageLayout = ImageLayout.Stretch;
-            lblCash.Text = "Cash: " + Convert.ToString(game.Players[game.player].Cash);
+            lblCash.Text = "Cash: " + Convert.ToString(game.Players[game.PlayerTurn].Cash);
             lbP1Properties.DataSource = null;
-            lbP1Properties.DataSource = game.Players[game.player].RealEstates;
+            lbP1Properties.DataSource = game.Players[game.PlayerTurn].RealEstates;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -155,14 +159,14 @@ namespace Monopoly
             saveFileDialog.RestoreDirectory = true;
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             saveFileDialog.AddExtension = true;
-            saveFileDialog.FileName = "Gameboard.dat";
+            saveFileDialog.FileName = "Board.dat";
 
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    game.fileHandler.Save(saveFileDialog.FileName);
+                    game.FileHandler.Save(saveFileDialog.FileName);
                 }
                 catch (PathTooLongException)
                 {
@@ -184,7 +188,7 @@ namespace Monopoly
             {
                 try
                 {
-                    game.fileHandler.Load(openFileDialog.FileName);
+                    game.FileHandler.Load(openFileDialog.FileName);
                 }
                 catch (DirectoryNotFoundException dirEx)
                 {
@@ -209,7 +213,7 @@ namespace Monopoly
 
         private void btnMortage_Click(object sender, EventArgs e)
         {
-            game.Mortage(game.GetGameSquare(game.Players[game.player].Position) as RealEstate, game.Players[game.player]);
+            game.Mortage(game.GetGameSquare(game.Players[game.PlayerTurn].Position) as RealEstate, game.Players[game.PlayerTurn]);
         }
 
         private void btnBuyP1_Click(object sender, EventArgs e)
@@ -225,8 +229,9 @@ namespace Monopoly
             finally
             {
                 lbP1Properties.DataSource = null;
-                lbP1Properties.DataSource = game.Players[game.player].RealEstates;
+                lbP1Properties.DataSource = game.Players[game.PlayerTurn].RealEstates;
             }
         }
+        
     }
 }
