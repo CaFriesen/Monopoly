@@ -19,6 +19,10 @@ namespace Monopoly
         /// <returns></returns>
         public static Point GetBoardLocation(int orderNumber, int boardSideLength)
         {
+            if (orderNumber > boardSideLength *4)
+            {
+                throw new OffTheBoardException("ordernumber is to big");
+            }
             Point loc = new Point();
             switch (orderNumber / boardSideLength)
             {
@@ -46,6 +50,10 @@ namespace Monopoly
 
         public static Point GetBoardLocation(int orderNumber, int boardSideLength, int offsetX, int offsetY)
         {
+            if (orderNumber > boardSideLength * 4)
+            {
+                throw new OffTheBoardException("ordernumber is to big");
+            }
             Point loc = new Point();
             switch (orderNumber / boardSideLength)
             {

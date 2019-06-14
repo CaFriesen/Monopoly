@@ -10,10 +10,11 @@ namespace MonopolyTests
         [TestMethod]
         public void GameTest_RollMovedPlayer()
         {
+            //hey freddy we weten niet goed waarom deze faalt maar we willen wel aantonen dat we met unit testen ook externe bestanden kunnen gebruiken in onze unittests
             Game game = new Game();
+            game.fileHandler.Load(@"../../../TestFiles/Gameboard.dat");
             int previousPosistion = game.Players[1].Position;
             game.Roll();
-            game.Gameboard = new GameBoard()
             Assert.AreNotEqual(previousPosistion, game.Players[1].Position);
             Assert.IsTrue(previousPosistion < game.Players[1].Position);
         }
