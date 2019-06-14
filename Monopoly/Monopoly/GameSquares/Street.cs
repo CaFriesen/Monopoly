@@ -18,7 +18,6 @@ namespace Monopoly
             }
         }
 
-        private int baseRent;
         public int HousePrice { get; private set; }
 
         public int Rent
@@ -36,6 +35,8 @@ namespace Monopoly
             }
         }
         public int Level { get; private set; }
+        
+        private int baseRent;
 
         public Street(int squareId, int price, int rent, int housePrice, string name, int r, int g, int b) : base(squareId, price, name, r, g, b)
         {
@@ -46,7 +47,7 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            if (!Available && player != Owner)
+            if (!Available && player != Owner && !OnMortage)
             {
                 player.Cash -= Rent;
                 Owner.Cash += Rent;
@@ -55,7 +56,7 @@ namespace Monopoly
 
         public void AddHouse()
         {
-            if (Level < 4 && Owner != null)
+            if (Level < 4 && Owner != null && !OnMortage)
             {
                 Owner.Cash -= HousePrice;
                 Level++;
@@ -64,7 +65,7 @@ namespace Monopoly
 
         public void AddHotel()
         {
-            if (Level == 4 && Owner != null)
+            if (Level == 4 && Owner != null && !OnMortage)
             {
                 Owner.Cash -= HousePrice;
                 Level++;

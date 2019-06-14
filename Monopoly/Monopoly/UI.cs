@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace Monopoly
 {
@@ -147,13 +149,61 @@ namespace Monopoly
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            game.fileHandler.Save();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Data File | *.dat";
+            saveFileDialog.Title = "Save gameboard to file";
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog.AddExtension = true;
+            saveFileDialog.FileName = "Gameboard.dat";
+
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    game.fileHandler.Save(saveFileDialog.FileName);
+                }
+                catch (PathTooLongException)
+                {
+                    MessageBox.Show("Your filename is too long");
+                }
+            }
         }
 
         private void tsLoad_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Data File | *.dat";
+            openFileDialog.Title = "Load gameboard from file";
+            openFileDialog.RestoreDirectory = true;
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            openFileDialog.AddExtension = true;
 
-            game.fileHandler.Load();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    game.fileHandler.Load(openFileDialog.FileName);
+                }
+                catch (DirectoryNotFoundException dirEx)
+                {
+                    MessageBox.Show("directory not found: " + dirEx.Message);
+                }
+                catch (FileNotFoundException fileEx)
+                {
+                    MessageBox.Show("file not found: " + fileEx.Message);
+                }
+                catch (PathTooLongException pathEx)
+                {
+                    MessageBox.Show("path is too long: " + pathEx.Message);
+                }
+                catch (SerializationException)
+                {
+                    MessageBox.Show("File is corrupt");
+                }
+            }
+
             AddGameSquares();
         }
 
