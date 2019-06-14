@@ -59,10 +59,7 @@ namespace Monopoly
 
         public void AddRealEstate(RealEstate estate)
         {
-            if (this == estate.Owner)
-            {
-                realEstates.Add(estate);
-            }
+            realEstates.Add(estate);
         }
     }
 }

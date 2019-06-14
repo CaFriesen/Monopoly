@@ -25,7 +25,7 @@ namespace Monopoly
 
         public override void Action(Player player)
         {
-            if (!Available && player != Owner)
+            if (!Available && player != Owner && !OnMortage)
             {
                 player.Cash -= baseRent * player.LastRoll;
                 Owner.Cash += baseRent * player.LastRoll;
