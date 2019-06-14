@@ -12,7 +12,7 @@ namespace Monopoly
         public FileHandeling fileHandler;
         private Random random;
         private List<Player> players;
-        public int player;
+        public int player = 0;
 
 
         public IReadOnlyList<Player> Players
@@ -84,16 +84,14 @@ namespace Monopoly
             }
         }
 
-        public void Mortage()
+        public void Mortage(RealEstate estate, Player player)
         {
-            foreach (GameSquare square in Players[player].RealEstates)
+            if (estate == null)
             {
-                if (square == GetGameSquare(Players[player].Position) && square is RealEstate)
-                {
-                    (square as RealEstate).OnMortage = true;
-                    Players[player].Cash += (square as RealEstate).Price / 2;
-                }
+                throw new ArgumentNullException("estate is null");
             }
+            estate.OnMortage = true;
+                    player.Cash += estate.Price;
         }
 
         public GameSquare GetGameSquare(int squareID)
@@ -105,7 +103,7 @@ namespace Monopoly
                     return square;
                 }
             }
-            throw new Exception("You're off the board (invalid Square ID)");
+            throw new OffTheBoardException("You're off the board (invalid Square ID)");
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Monopoly
 {
     [Serializable]
-    class Jail: Normal
+    public class Jail: Normal
     {
         public override string Info
         {

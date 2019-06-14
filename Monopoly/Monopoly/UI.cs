@@ -110,6 +110,7 @@ namespace Monopoly
             {
                 btnBuyP1.Enabled = true;
                 btnP1Upgrade.Enabled = false;
+                btnMortage.Enabled = false;
 
                 if (square is Street)
                 {
@@ -118,6 +119,7 @@ namespace Monopoly
                         if (square == estate)
                         {
                             btnP1Upgrade.Enabled = true;
+                            btnMortage.Enabled = true;
                         }
                     }
                 }
@@ -126,6 +128,7 @@ namespace Monopoly
             {
                 btnBuyP1.Enabled = false;
                 btnP1Upgrade.Enabled = false;
+                btnMortage.Enabled = false;
             }
         }
 
@@ -156,7 +159,7 @@ namespace Monopoly
 
         private void btnMortage_Click(object sender, EventArgs e)
         {
-
+            game.Mortage(game.GetGameSquare(game.Players[game.player].Position) as RealEstate, game.Players[game.player]);
         }
 
         private void btnBuyP1_Click(object sender, EventArgs e)
